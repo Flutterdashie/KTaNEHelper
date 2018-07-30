@@ -44,15 +44,15 @@ namespace SimpleWires
         
         private void updateButtonStatus()
         {
-            bool addButtonsOn = (wireList.getLength() <= 5);
-            bool delButtonOn = (wireList.getLength() >= 1);
+            int curLength = wireList.getLength();
+            bool addButtonsOn = (curLength <= 5);
             btnAddBlack.Enabled = addButtonsOn;
             btnAddBlue.Enabled = addButtonsOn;
             btnAddRed.Enabled = addButtonsOn;
             btnAddYellow.Enabled = addButtonsOn;
             btnAddWhite.Enabled = addButtonsOn;
-
-            btnDeleteWire.Enabled = delButtonOn;
+            btnDeleteWire.Enabled = (curLength >= 1);
+            btnSubmit.Enabled = ((curLength >= 3) && (curLength <= 6));
         }
 
         private void addNewWire(String wireColor)
@@ -93,6 +93,18 @@ namespace SimpleWires
         private void btnAddRed_Click(object sender, EventArgs e)
         {
             addNewWire("red");
+        }
+
+        private void runCalculations(object sender, EventArgs e)
+        {
+            //Gotta get that wire stuff handled here!
+        }
+
+        private void resetForm(object sender, EventArgs e)
+        {
+            wireList.resetList();
+            updateWireView();
+            updateButtonStatus();
         }
     }
 }

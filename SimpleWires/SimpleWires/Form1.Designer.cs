@@ -257,6 +257,7 @@
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Calculate";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.runCalculations);
             // 
             // btnReset
             // 
@@ -266,6 +267,7 @@
             this.btnReset.TabIndex = 3;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.resetForm);
             // 
             // Form1
             // 
