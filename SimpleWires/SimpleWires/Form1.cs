@@ -13,6 +13,7 @@ namespace SimpleWires
     public partial class frmSimpleWires : Form
     {
         private WireList wireList;
+        private static List<String> THREE_WIRE_TEST = new List<String>{ "blue", "blue", "red"};
         public frmSimpleWires()
         {
             InitializeComponent();
@@ -23,6 +24,10 @@ namespace SimpleWires
 
         private void updateWireView()
         {
+            //Stack overflow here to save the day again! I really did not want to 
+            //manually iterate over each item, it takes up a bunch of lines and looks bad.
+            //I had to in the button status method :\
+            lblCutNumber.Text = "Don\'t cut yet, I\'m not done thinking!";
             List<String> currWires = wireList.getWires();
             TableLayoutControlCollection controls = tlpCurrentWires.Controls;
             int visibleWires = wireList.getLength();
@@ -97,14 +102,41 @@ namespace SimpleWires
 
         private void runCalculations(object sender, EventArgs e)
         {
-            //Gotta get that wire stuff handled here!
+            if (wireList.getLength() == 3)
+            {
+                lblCutNumber.Text = threeWireCalc();
+            }
         }
 
         private void resetForm(object sender, EventArgs e)
         {
+            chkSerialOdd.Checked = false;
             wireList.resetList();
             updateWireView();
             updateButtonStatus();
+        }
+        private String threeWireCalc()
+        {
+            bool wireTested = true;
+            for (int i = 0; i < 3; i++)
+            {
+                if(!(wireList.getWires().ElementAt(i) == THREE_WIRE_TEST.ElementAt(i)))
+                {
+                    wireTested = false;
+                }
+            }
+            if(wireTested || (wireList.howMany("red") == 0))
+            {
+                return "Cut the second wire";
+            }
+            return "Cut the last wire";
+        }
+
+        private void refreshChecked(object sender, EventArgs e)
+        {
+            //Makes sure that it removes any stored solution if the check is changed, as that'd
+            //change the solution.
+            updateWireView();
         }
     }
 }

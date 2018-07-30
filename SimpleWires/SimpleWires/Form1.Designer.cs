@@ -44,9 +44,9 @@
             this.lblWire6 = new System.Windows.Forms.Label();
             this.tlpControlsOutput = new System.Windows.Forms.TableLayoutPanel();
             this.lblCutNumber = new System.Windows.Forms.Label();
-            this.lblCutColor = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.chkSerialOdd = new System.Windows.Forms.CheckBox();
             this.tlpWireControls.SuspendLayout();
             this.tlpCurrentWires.SuspendLayout();
             this.tlpControlsOutput.SuspendLayout();
@@ -220,9 +220,9 @@
             this.tlpControlsOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpControlsOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpControlsOutput.Controls.Add(this.lblCutNumber, 0, 0);
-            this.tlpControlsOutput.Controls.Add(this.lblCutColor, 1, 0);
             this.tlpControlsOutput.Controls.Add(this.btnSubmit, 0, 1);
             this.tlpControlsOutput.Controls.Add(this.btnReset, 1, 1);
+            this.tlpControlsOutput.Controls.Add(this.chkSerialOdd, 1, 0);
             this.tlpControlsOutput.Location = new System.Drawing.Point(13, 151);
             this.tlpControlsOutput.Name = "tlpControlsOutput";
             this.tlpControlsOutput.RowCount = 2;
@@ -239,15 +239,6 @@
             this.lblCutNumber.Size = new System.Drawing.Size(174, 13);
             this.lblCutNumber.TabIndex = 0;
             this.lblCutNumber.Text = "Don\'t cut yet, I\'m not done thinking!";
-            // 
-            // lblCutColor
-            // 
-            this.lblCutColor.AutoSize = true;
-            this.lblCutColor.Location = new System.Drawing.Point(206, 0);
-            this.lblCutColor.Name = "lblCutColor";
-            this.lblCutColor.Size = new System.Drawing.Size(192, 26);
-            this.lblCutColor.TabIndex = 1;
-            this.lblCutColor.Text = "I can\'t know the color without knowing the number.";
             // 
             // btnSubmit
             // 
@@ -268,6 +259,17 @@
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.resetForm);
+            // 
+            // chkSerialOdd
+            // 
+            this.chkSerialOdd.AutoSize = true;
+            this.chkSerialOdd.Location = new System.Drawing.Point(206, 3);
+            this.chkSerialOdd.Name = "chkSerialOdd";
+            this.chkSerialOdd.Size = new System.Drawing.Size(143, 30);
+            this.chkSerialOdd.TabIndex = 4;
+            this.chkSerialOdd.Text = "The last digit of the serial\r\nnumber is odd";
+            this.chkSerialOdd.UseVisualStyleBackColor = true;
+            this.chkSerialOdd.CheckedChanged += new System.EventHandler(this.refreshChecked);
             // 
             // frmSimpleWires
             // 
@@ -304,7 +306,6 @@
         private System.Windows.Forms.TableLayoutPanel tlpCurrentWires;
         private System.Windows.Forms.TableLayoutPanel tlpControlsOutput;
         private System.Windows.Forms.Label lblCutNumber;
-        private System.Windows.Forms.Label lblCutColor;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label lblWire4;
@@ -313,6 +314,7 @@
         private System.Windows.Forms.Label lblWire1;
         private System.Windows.Forms.Label lblWire6;
         private System.Windows.Forms.Label lblWire5;
+        private System.Windows.Forms.CheckBox chkSerialOdd;
     }
 }
 
