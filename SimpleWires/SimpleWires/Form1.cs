@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace SimpleWires
 {
-    public partial class Form1 : Form
+    public partial class frmSimpleWires : Form
     {
         private WireList wireList;
-        public Form1()
+        public frmSimpleWires()
         {
             InitializeComponent();
             wireList = new WireList();

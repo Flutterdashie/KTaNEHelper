@@ -1,6 +1,6 @@
 ﻿namespace SimpleWires
 {
-    partial class Form1
+    partial class frmSimpleWires
     {
         /// <summary>
         /// Required designer variable.
@@ -269,16 +269,19 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.resetForm);
             // 
-            // Form1
+            // frmSimpleWires
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(433, 294);
             this.Controls.Add(this.tlpControlsOutput);
             this.Controls.Add(this.tlpCurrentWires);
             this.Controls.Add(this.tlpWireControls);
-            this.Name = "Form1";
+            this.MaximizeBox = false;
+            this.Name = "frmSimpleWires";
             this.Text = "Form1";
             this.tlpWireControls.ResumeLayout(false);
             this.tlpCurrentWires.ResumeLayout(false);
