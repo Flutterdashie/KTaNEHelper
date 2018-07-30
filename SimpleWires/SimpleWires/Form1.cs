@@ -17,8 +17,11 @@ namespace SimpleWires
         {
             InitializeComponent();
             wireList = new WireList();
+            updateWireView();
+            updateButtonStatus();
         }
-        public void updateWireView()
+
+        private void updateWireView()
         {
             List<String> currWires = wireList.getWires();
             TableLayoutControlCollection controls = tlpCurrentWires.Controls;
@@ -38,9 +41,58 @@ namespace SimpleWires
                 }
             }
         }
+        
+        private void updateButtonStatus()
+        {
+            bool addButtonsOn = (wireList.getLength() <= 5);
+            bool delButtonOn = (wireList.getLength() >= 1);
+            btnAddBlack.Enabled = addButtonsOn;
+            btnAddBlue.Enabled = addButtonsOn;
+            btnAddRed.Enabled = addButtonsOn;
+            btnAddYellow.Enabled = addButtonsOn;
+            btnAddWhite.Enabled = addButtonsOn;
 
-    }
+            btnDeleteWire.Enabled = delButtonOn;
+        }
 
-    
+        private void addNewWire(String wireColor)
+        {
+            wireList.addToList(wireColor);
+            updateButtonStatus();
+            updateWireView();
+        }
+
+
+        private void removeWire(object sender, EventArgs e)
+        {
+            wireList.delLastWire();
+            updateButtonStatus();
+            updateWireView();
+        }
+
+        private void btnAddWhite_Click(object sender, EventArgs e)
+        {
+            addNewWire("white");
+        }
+
+        private void btnAddYellow_Click(object sender, EventArgs e)
+        {
+            addNewWire("yellow");
+        }
+
+        private void btnAddBlack_Click(object sender, EventArgs e)
+        {
+            addNewWire("black");
+        }
+
+        private void btnAddBlue_Click(object sender, EventArgs e)
+        {
+            addNewWire("blue");
+        }
+
+        private void btnAddRed_Click(object sender, EventArgs e)
+        {
+            addNewWire("red");
+        }
     }
 }

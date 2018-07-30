@@ -36,12 +36,12 @@
             this.btnDeleteWire = new System.Windows.Forms.Button();
             this.tlpWireControls = new System.Windows.Forms.TableLayoutPanel();
             this.tlpCurrentWires = new System.Windows.Forms.TableLayoutPanel();
-            this.lblWire6 = new System.Windows.Forms.Label();
-            this.lblWire5 = new System.Windows.Forms.Label();
-            this.lblWire4 = new System.Windows.Forms.Label();
-            this.lblWire3 = new System.Windows.Forms.Label();
-            this.lblWire2 = new System.Windows.Forms.Label();
             this.lblWire1 = new System.Windows.Forms.Label();
+            this.lblWire2 = new System.Windows.Forms.Label();
+            this.lblWire3 = new System.Windows.Forms.Label();
+            this.lblWire4 = new System.Windows.Forms.Label();
+            this.lblWire5 = new System.Windows.Forms.Label();
+            this.lblWire6 = new System.Windows.Forms.Label();
             this.tlpControlsOutput = new System.Windows.Forms.TableLayoutPanel();
             this.lblCutNumber = new System.Windows.Forms.Label();
             this.lblCutColor = new System.Windows.Forms.Label();
@@ -60,6 +60,7 @@
             this.btnAddRed.TabIndex = 0;
             this.btnAddRed.Text = "Add Red";
             this.btnAddRed.UseVisualStyleBackColor = true;
+            this.btnAddRed.Click += new System.EventHandler(this.btnAddRed_Click);
             // 
             // btnAddBlue
             // 
@@ -69,6 +70,7 @@
             this.btnAddBlue.TabIndex = 1;
             this.btnAddBlue.Text = "Add Blue";
             this.btnAddBlue.UseVisualStyleBackColor = true;
+            this.btnAddBlue.Click += new System.EventHandler(this.btnAddBlue_Click);
             // 
             // btnAddBlack
             // 
@@ -78,6 +80,7 @@
             this.btnAddBlack.TabIndex = 2;
             this.btnAddBlack.Text = "Add Black";
             this.btnAddBlack.UseVisualStyleBackColor = true;
+            this.btnAddBlack.Click += new System.EventHandler(this.btnAddBlack_Click);
             // 
             // btnAddYellow
             // 
@@ -87,6 +90,7 @@
             this.btnAddYellow.TabIndex = 3;
             this.btnAddYellow.Text = "Add Yellow";
             this.btnAddYellow.UseVisualStyleBackColor = true;
+            this.btnAddYellow.Click += new System.EventHandler(this.btnAddYellow_Click);
             // 
             // btnAddWhite
             // 
@@ -96,6 +100,7 @@
             this.btnAddWhite.TabIndex = 4;
             this.btnAddWhite.Text = "Add White";
             this.btnAddWhite.UseVisualStyleBackColor = true;
+            this.btnAddWhite.Click += new System.EventHandler(this.btnAddWhite_Click);
             // 
             // btnDeleteWire
             // 
@@ -105,6 +110,7 @@
             this.btnDeleteWire.TabIndex = 5;
             this.btnDeleteWire.Text = "Remove Wire";
             this.btnDeleteWire.UseVisualStyleBackColor = true;
+            this.btnDeleteWire.Click += new System.EventHandler(this.removeWire);
             // 
             // tlpWireControls
             // 
@@ -130,12 +136,12 @@
             // 
             this.tlpCurrentWires.ColumnCount = 1;
             this.tlpCurrentWires.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpCurrentWires.Controls.Add(this.lblWire6, 0, 5);
-            this.tlpCurrentWires.Controls.Add(this.lblWire5, 0, 4);
-            this.tlpCurrentWires.Controls.Add(this.lblWire4, 0, 3);
-            this.tlpCurrentWires.Controls.Add(this.lblWire3, 0, 2);
-            this.tlpCurrentWires.Controls.Add(this.lblWire2, 0, 1);
             this.tlpCurrentWires.Controls.Add(this.lblWire1, 0, 0);
+            this.tlpCurrentWires.Controls.Add(this.lblWire2, 0, 1);
+            this.tlpCurrentWires.Controls.Add(this.lblWire3, 0, 2);
+            this.tlpCurrentWires.Controls.Add(this.lblWire4, 0, 3);
+            this.tlpCurrentWires.Controls.Add(this.lblWire5, 0, 4);
+            this.tlpCurrentWires.Controls.Add(this.lblWire6, 0, 5);
             this.tlpCurrentWires.Location = new System.Drawing.Point(219, 13);
             this.tlpCurrentWires.Name = "tlpCurrentWires";
             this.tlpCurrentWires.RowCount = 6;
@@ -148,45 +154,15 @@
             this.tlpCurrentWires.Size = new System.Drawing.Size(200, 131);
             this.tlpCurrentWires.TabIndex = 7;
             // 
-            // lblWire6
+            // lblWire1
             // 
-            this.lblWire6.AutoSize = true;
-            this.lblWire6.Location = new System.Drawing.Point(3, 106);
-            this.lblWire6.Name = "lblWire6";
-            this.lblWire6.Size = new System.Drawing.Size(193, 25);
-            this.lblWire6.TabIndex = 5;
-            this.lblWire6.Text = "----------------------------------------------------------------";
-            this.lblWire6.Visible = false;
-            // 
-            // lblWire5
-            // 
-            this.lblWire5.AutoSize = true;
-            this.lblWire5.Location = new System.Drawing.Point(3, 86);
-            this.lblWire5.Name = "lblWire5";
-            this.lblWire5.Size = new System.Drawing.Size(193, 20);
-            this.lblWire5.TabIndex = 4;
-            this.lblWire5.Text = "----------------------------------------------------------------";
-            this.lblWire5.Visible = false;
-            // 
-            // lblWire4
-            // 
-            this.lblWire4.AutoSize = true;
-            this.lblWire4.Location = new System.Drawing.Point(3, 66);
-            this.lblWire4.Name = "lblWire4";
-            this.lblWire4.Size = new System.Drawing.Size(193, 20);
-            this.lblWire4.TabIndex = 3;
-            this.lblWire4.Text = "----------------------------------------------------------------";
-            this.lblWire4.Visible = false;
-            // 
-            // lblWire3
-            // 
-            this.lblWire3.AutoSize = true;
-            this.lblWire3.Location = new System.Drawing.Point(3, 46);
-            this.lblWire3.Name = "lblWire3";
-            this.lblWire3.Size = new System.Drawing.Size(193, 20);
-            this.lblWire3.TabIndex = 2;
-            this.lblWire3.Text = "----------------------------------------------------------------";
-            this.lblWire3.Visible = false;
+            this.lblWire1.AutoSize = true;
+            this.lblWire1.Location = new System.Drawing.Point(3, 0);
+            this.lblWire1.Name = "lblWire1";
+            this.lblWire1.Size = new System.Drawing.Size(193, 23);
+            this.lblWire1.TabIndex = 0;
+            this.lblWire1.Text = "----------------------------------------------------------------";
+            this.lblWire1.Visible = false;
             // 
             // lblWire2
             // 
@@ -198,15 +174,45 @@
             this.lblWire2.Text = "----------------------------------------------------------------";
             this.lblWire2.Visible = false;
             // 
-            // lblWire1
+            // lblWire3
             // 
-            this.lblWire1.AutoSize = true;
-            this.lblWire1.Location = new System.Drawing.Point(3, 0);
-            this.lblWire1.Name = "lblWire1";
-            this.lblWire1.Size = new System.Drawing.Size(193, 23);
-            this.lblWire1.TabIndex = 0;
-            this.lblWire1.Text = "----------------------------------------------------------------";
-            this.lblWire1.Visible = false;
+            this.lblWire3.AutoSize = true;
+            this.lblWire3.Location = new System.Drawing.Point(3, 46);
+            this.lblWire3.Name = "lblWire3";
+            this.lblWire3.Size = new System.Drawing.Size(193, 20);
+            this.lblWire3.TabIndex = 2;
+            this.lblWire3.Text = "----------------------------------------------------------------";
+            this.lblWire3.Visible = false;
+            // 
+            // lblWire4
+            // 
+            this.lblWire4.AutoSize = true;
+            this.lblWire4.Location = new System.Drawing.Point(3, 66);
+            this.lblWire4.Name = "lblWire4";
+            this.lblWire4.Size = new System.Drawing.Size(193, 20);
+            this.lblWire4.TabIndex = 3;
+            this.lblWire4.Text = "----------------------------------------------------------------";
+            this.lblWire4.Visible = false;
+            // 
+            // lblWire5
+            // 
+            this.lblWire5.AutoSize = true;
+            this.lblWire5.Location = new System.Drawing.Point(3, 86);
+            this.lblWire5.Name = "lblWire5";
+            this.lblWire5.Size = new System.Drawing.Size(193, 20);
+            this.lblWire5.TabIndex = 4;
+            this.lblWire5.Text = "----------------------------------------------------------------";
+            this.lblWire5.Visible = false;
+            // 
+            // lblWire6
+            // 
+            this.lblWire6.AutoSize = true;
+            this.lblWire6.Location = new System.Drawing.Point(3, 106);
+            this.lblWire6.Name = "lblWire6";
+            this.lblWire6.Size = new System.Drawing.Size(193, 25);
+            this.lblWire6.TabIndex = 5;
+            this.lblWire6.Text = "----------------------------------------------------------------";
+            this.lblWire6.Visible = false;
             // 
             // tlpControlsOutput
             // 
