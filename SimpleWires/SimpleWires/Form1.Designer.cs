@@ -47,6 +47,8 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.chkSerialOdd = new System.Windows.Forms.CheckBox();
+            this.linkNormalManual = new System.Windows.Forms.LinkLabel();
+            this.linkOptimizedManual = new System.Windows.Forms.LinkLabel();
             this.tlpWireControls.SuspendLayout();
             this.tlpCurrentWires.SuspendLayout();
             this.tlpControlsOutput.SuspendLayout();
@@ -219,16 +221,19 @@
             this.tlpControlsOutput.ColumnCount = 2;
             this.tlpControlsOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpControlsOutput.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpControlsOutput.Controls.Add(this.linkOptimizedManual, 1, 2);
             this.tlpControlsOutput.Controls.Add(this.lblCutNumber, 0, 0);
+            this.tlpControlsOutput.Controls.Add(this.linkNormalManual, 0, 2);
             this.tlpControlsOutput.Controls.Add(this.btnSubmit, 0, 1);
             this.tlpControlsOutput.Controls.Add(this.btnReset, 1, 1);
             this.tlpControlsOutput.Controls.Add(this.chkSerialOdd, 1, 0);
             this.tlpControlsOutput.Location = new System.Drawing.Point(13, 151);
             this.tlpControlsOutput.Name = "tlpControlsOutput";
-            this.tlpControlsOutput.RowCount = 2;
-            this.tlpControlsOutput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpControlsOutput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tlpControlsOutput.Size = new System.Drawing.Size(406, 139);
+            this.tlpControlsOutput.RowCount = 3;
+            this.tlpControlsOutput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tlpControlsOutput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tlpControlsOutput.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tlpControlsOutput.Size = new System.Drawing.Size(406, 117);
             this.tlpControlsOutput.TabIndex = 8;
             // 
             // lblCutNumber
@@ -242,7 +247,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(3, 88);
+            this.btnSubmit.Location = new System.Drawing.Point(3, 41);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(196, 48);
             this.btnSubmit.TabIndex = 2;
@@ -252,7 +257,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(206, 88);
+            this.btnReset.Location = new System.Drawing.Point(206, 41);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(197, 48);
             this.btnReset.TabIndex = 3;
@@ -271,6 +276,28 @@
             this.chkSerialOdd.UseVisualStyleBackColor = true;
             this.chkSerialOdd.CheckedChanged += new System.EventHandler(this.refreshChecked);
             // 
+            // linkNormalManual
+            // 
+            this.linkNormalManual.AutoSize = true;
+            this.linkNormalManual.Location = new System.Drawing.Point(3, 95);
+            this.linkNormalManual.Name = "linkNormalManual";
+            this.linkNormalManual.Size = new System.Drawing.Size(78, 13);
+            this.linkNormalManual.TabIndex = 9;
+            this.linkNormalManual.TabStop = true;
+            this.linkNormalManual.Text = "Normal Manual";
+            this.linkNormalManual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.normalManualClicked);
+            // 
+            // linkOptimizedManual
+            // 
+            this.linkOptimizedManual.AutoSize = true;
+            this.linkOptimizedManual.Location = new System.Drawing.Point(206, 95);
+            this.linkOptimizedManual.Name = "linkOptimizedManual";
+            this.linkOptimizedManual.Size = new System.Drawing.Size(91, 13);
+            this.linkOptimizedManual.TabIndex = 10;
+            this.linkOptimizedManual.TabStop = true;
+            this.linkOptimizedManual.Text = "Optimized Manual";
+            this.linkOptimizedManual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.optimizedManualClicked);
+            // 
             // frmSimpleWires
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -278,13 +305,13 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(433, 294);
+            this.ClientSize = new System.Drawing.Size(433, 276);
             this.Controls.Add(this.tlpControlsOutput);
             this.Controls.Add(this.tlpCurrentWires);
             this.Controls.Add(this.tlpWireControls);
             this.MaximizeBox = false;
             this.Name = "frmSimpleWires";
-            this.Text = "Form1";
+            this.Text = "Simple Wires Solver";
             this.tlpWireControls.ResumeLayout(false);
             this.tlpCurrentWires.ResumeLayout(false);
             this.tlpCurrentWires.PerformLayout();
@@ -315,6 +342,8 @@
         private System.Windows.Forms.Label lblWire6;
         private System.Windows.Forms.Label lblWire5;
         private System.Windows.Forms.CheckBox chkSerialOdd;
+        private System.Windows.Forms.LinkLabel linkNormalManual;
+        private System.Windows.Forms.LinkLabel linkOptimizedManual;
     }
 }
 

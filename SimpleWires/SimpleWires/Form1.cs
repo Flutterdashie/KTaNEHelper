@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -218,6 +219,24 @@ namespace SimpleWires
             //Makes sure that it removes any stored solution if the check is changed, as that'd
             //change the solution.
             updateWireView();
+        }
+
+        private void spawnWebPage(String url)
+        {
+            //thanks again, stackoverflow! https://stackoverflow.com/questions/58024/open-a-url-from-windows-forms
+            ProcessStartInfo sendToSite = new ProcessStartInfo(url);
+            Process.Start(sendToSite);
+
+        }
+
+        private void normalManualClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            spawnWebPage("http://www.bombmanual.com/manual/1/html/index.html");
+        }
+
+        private void optimizedManualClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            spawnWebPage("https://ktane.timwi.de/HTML/Wires%20optimized%20(Timwi).html");
         }
     }
 }
