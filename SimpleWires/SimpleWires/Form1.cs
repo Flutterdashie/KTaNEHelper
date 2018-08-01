@@ -114,10 +114,10 @@ namespace SimpleWires
                     lblCutNumber.Text = fiveWireCalc();
                     break;
                 case 6:
-                    lblCutNumber.Text = "Not yet implemented, sorry!";
+                    lblCutNumber.Text = sixWireCalc();
                     break;
                 default:
-                    lblCutNumber.Text = "Oops! Something\'s gone wrong in the wire counting switch.";
+                    lblCutNumber.Text = "Oops! Something has gone wrong in the wire counting switch.";
                     break;
             }
         }
@@ -189,6 +189,26 @@ namespace SimpleWires
             else
             {
                 return "Cut the first wire";
+            }
+        }
+
+        private String sixWireCalc()
+        {
+            if((wireList.howMany("yellow") == 0) && chkSerialOdd.Checked)
+            {
+                return "Cut the third wire";
+            }
+            else if ((wireList.howMany("yellow") == 1) && (wireList.howMany("white") >= 2))
+            {
+                return "Cut the 4th wire";
+            }
+            else if(wireList.howMany("red") == 0)
+            {
+                return "Cut the last wire";
+            }
+            else
+            {
+                return "Cut the 4th wire";
             }
         }
 
