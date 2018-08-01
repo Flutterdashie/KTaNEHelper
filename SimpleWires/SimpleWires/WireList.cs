@@ -73,5 +73,15 @@ namespace SimpleWires
             contents.Clear();
             length = contents.Count;
         }
+        public int getLastIndexOf(String target)
+        {
+            //Lambda expressions are weird. Cool, but weird.
+            return contents.FindLastIndex(wire => wire.Equals(target));
+            /* After making this, I realized that it technically isn't necessary.
+            * I could simply say "cut the last red wire" or equivalent.
+            * However, I'll probably implement a redundancy later, something like:
+            * "Cut the last red wire, which should be wire number: 2"
+            */
+        }
     }
 }

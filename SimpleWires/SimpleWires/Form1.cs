@@ -102,9 +102,21 @@ namespace SimpleWires
 
         private void runCalculations(object sender, EventArgs e)
         {
-            if (wireList.getLength() == 3)
+            switch(wireList.getLength())
             {
-                lblCutNumber.Text = threeWireCalc();
+                case 3:
+                    lblCutNumber.Text = threeWireCalc();
+                    break;
+                case 4:
+                    lblCutNumber.Text = fourWireCalc();
+                    break;
+                case 5:
+                case 6:
+                    lblCutNumber.Text = "Not yet implemented, sorry!";
+                    break;
+                default:
+                    lblCutNumber.Text = "Oops! Something\'s gone wrong in the wire counting switch.";
+                    break;
             }
         }
 
@@ -117,6 +129,8 @@ namespace SimpleWires
         }
         private String threeWireCalc()
         {
+            //Bit of a roundabout method, but this checks to see if the three wires are
+            //blue, blue, red, in that order.
             bool wireTested = true;
             for (int i = 0; i < 3; i++)
             {
@@ -131,6 +145,31 @@ namespace SimpleWires
             }
             return "Cut the last wire";
         }
+
+        private String fourWireCalc()
+        {
+            if ((wireList.howMany("red") >= 2) && chkSerialOdd.Checked)
+            {
+                return "Cut the last red wire";
+            }
+            else if((wireList.isLastWire("yellow")) && (wireList.howMany("red") == 0))
+            {
+                return "Cut the first wire";
+            }
+            else if(wireList.howMany("blue") == 1)
+            {
+                return "Cut the first wire";
+            }
+            else if(wireList.howMany("yellow") >= 2)
+            {
+                return "Cut the last wire";
+            }
+            else
+            {
+                return "Cut the second wire";
+            }
+        }
+
 
         private void refreshChecked(object sender, EventArgs e)
         {
