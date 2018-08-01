@@ -19,7 +19,8 @@ namespace KTANESolver
 
         private void btnLaunchWires_Click(object sender, EventArgs e)
         {
-            //Form simpleWires = new SimpleWires();
+            Form simpleWires = new SimpleWires.frmSimpleWires();
+            simpleWires.Show();
         }
     }
 }
