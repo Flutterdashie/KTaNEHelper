@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Edgework.cs" />
     <Compile Include="KTANESolver.cs">
       <SubType>Form</SubType>
     </Compile>

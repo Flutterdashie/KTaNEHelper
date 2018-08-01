@@ -14,12 +14,11 @@ namespace KTANESolver
      * A ton of this stuff will probably not be used for a while, but I'm coding this with support for every Twitch Plays mod in mind
      * This includes some things that might not be used for a while, but I'm not going to include complex things 
      * such as port plates as of yet.
-     * The typical shorthand for edgework is rather difficult to parse due to the fact
-     * that entire sections are simply removed if absent rather than being set to zero or left blank
+     * I was originally planning to use the common shorthand found on Twitch Plays to allow for quicker setup, but it seems
+     * like it'd be FAR more trouble than it's worth. Maybe some other time.
      */
     class Edgework
     {
-        private String shorthandEdgework;
         private int batteryAA, batteryD, batteryHolders, batteryTotal;
         private List<String> litIndicators, unlitIndicators, ports;
         private String serialNum;
@@ -31,17 +30,33 @@ namespace KTANESolver
             batteryTotal = 0;
             serialNum = "unknown";
         }
-        public Edgework(String shortEdges)
+        public Edgework(int batteries, int holders, String litList, String unlitList, String portList, String serial)
         {
-            shorthandEdgework = shortEdges;
-        }
-        public void updateToShorthand()
-        {
+            batteryTotal = batteries;
+            batteryHolders = holders;
+            batteryAA = (batteries - holders) * 2;
+            batteryD = batteries - batteryAA;
+            litIndicators = splitCommaList(litList);
+            unlitIndicators = splitCommaList(unlitList);
+            ports = splitCommaList(portList);
+            serialNum = serial.Trim();
 
         }
-        public void updateFromShorthand()
+        public List<String> splitCommaList(String commaList)
         {
-
+            List<String> tempList = new List<String>();
+            if(commaList.Length != 0)
+            {
+                commaList.Trim();
+                String[] matrixOutput = commaList.Split(',');
+                foreach(String x in matrixOutput)
+                {
+                    x.Trim();
+                    tempList.Add(x);
+                }
+            }
+            return tempList;
         }
+
     }
 }
