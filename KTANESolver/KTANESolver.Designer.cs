@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnLaunchWires = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnLaunchWires
+            // 
+            this.btnLaunchWires.Location = new System.Drawing.Point(13, 13);
+            this.btnLaunchWires.Name = "btnLaunchWires";
+            this.btnLaunchWires.Size = new System.Drawing.Size(139, 54);
+            this.btnLaunchWires.TabIndex = 0;
+            this.btnLaunchWires.Text = "Simple Wires";
+            this.btnLaunchWires.UseVisualStyleBackColor = true;
+            this.btnLaunchWires.Click += new System.EventHandler(this.btnLaunchWires_Click);
             // 
             // KTANESolver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLaunchWires);
             this.Name = "KTANESolver";
             this.Text = "KTANE Solver";
             this.ResumeLayout(false);
@@ -42,6 +54,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnLaunchWires;
     }
 }
 

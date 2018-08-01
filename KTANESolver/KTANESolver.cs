@@ -16,5 +16,10 @@ namespace KTANESolver
         {
             InitializeComponent();
         }
+
+        private void btnLaunchWires_Click(object sender, EventArgs e)
+        {
+            //Form simpleWires = new SimpleWires();
+        }
     }
 }
