@@ -80,7 +80,7 @@
             this.grpEdgework.Controls.Add(this.txtUnlitIndicators);
             this.grpEdgework.Location = new System.Drawing.Point(13, 13);
             this.grpEdgework.Name = "grpEdgework";
-            this.grpEdgework.Size = new System.Drawing.Size(268, 285);
+            this.grpEdgework.Size = new System.Drawing.Size(248, 285);
             this.grpEdgework.TabIndex = 0;
             this.grpEdgework.TabStop = false;
             this.grpEdgework.Text = "Edgework";
@@ -193,6 +193,7 @@
             this.btnParseEdgework.TabIndex = 12;
             this.btnParseEdgework.Text = "Validate and Apply";
             this.btnParseEdgework.UseVisualStyleBackColor = true;
+            this.btnParseEdgework.Click += new System.EventHandler(this.applyEdgework);
             // 
             // btnReset
             // 

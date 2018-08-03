@@ -57,6 +57,25 @@ namespace KTANESolver
             }
             return tempList;
         }
+        public override string ToString()
+        {
+            string shorthand = batteryTotal + "B " + batteryHolders + "H //";
+            foreach (String x in litIndicators)
+            {
+                shorthand += " *" + x;
+            }
+            foreach (String y in unlitIndicators)
+            {
+                shorthand += " " + y;
+            }
+            shorthand += " //";
+            foreach(String z in ports)
+            {
+                shorthand += " " + z;
+            }
+            shorthand += " // " + serialNum;
+            return shorthand;
+        }
 
     }
 }
