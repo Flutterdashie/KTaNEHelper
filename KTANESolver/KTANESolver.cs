@@ -19,7 +19,7 @@ namespace KTANESolver
         {
             if (edgeworkReady)
             {
-                Form simpleWires = new SimpleWires.frmSimpleWires(edgework.isSerialOdd());
+                Form simpleWires = new SimpleWires.frmSimpleWires(edgework);
                 simpleWires.Show();
             }
             else

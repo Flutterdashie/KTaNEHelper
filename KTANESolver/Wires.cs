@@ -25,16 +25,17 @@ namespace SimpleWires
             updateButtonStatus();
             edgeworkInherited = false;
         }
-        public frmSimpleWires(bool serialOdd)
+        public frmSimpleWires(Edgework edges)
         {
             InitializeComponent();
             wireList = new WireList();
             updateWireView();
             updateButtonStatus();
             edgeworkInherited = true;
-            serialIsOdd = serialOdd;
+            serialIsOdd = edges.isSerialOdd();
             chkSerialOdd.Checked = serialIsOdd;
             chkSerialOdd.Enabled = false;
+            chkSerialOdd.Text = "Serial number inherited from current\n bomb.";
         }
 
         private void updateWireView()
