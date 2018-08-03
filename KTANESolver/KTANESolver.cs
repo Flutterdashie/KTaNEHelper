@@ -97,8 +97,8 @@ namespace KTANESolver
             txtUnlitIndicators.ResetText();
             txtSerial.ResetText();
             txtPorts.ResetText();
-            nudBatteries.ResetText();
-            nudHolders.ResetText();
+            nudBatteries.Value = 0;
+            nudHolders.Value = 0;
             lblCurrentEdges.Text = "Current Edgework: Not yet applied";
             edgeworkReady = false;
         }
