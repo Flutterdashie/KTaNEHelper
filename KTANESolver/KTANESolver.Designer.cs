@@ -31,25 +31,25 @@
             this.components = new System.ComponentModel.Container();
             this.btnLaunchWires = new System.Windows.Forms.Button();
             this.grpEdgework = new System.Windows.Forms.GroupBox();
-            this.txtUnlitIndicators = new System.Windows.Forms.TextBox();
-            this.txtLitIndicators = new System.Windows.Forms.TextBox();
-            this.lblUnlit = new System.Windows.Forms.Label();
-            this.lblLit = new System.Windows.Forms.Label();
-            this.lblBatteries = new System.Windows.Forms.Label();
-            this.nudBatteries = new System.Windows.Forms.NumericUpDown();
-            this.nudHolders = new System.Windows.Forms.NumericUpDown();
-            this.lblHolders = new System.Windows.Forms.Label();
-            this.lblSerial = new System.Windows.Forms.Label();
-            this.txtSerial = new System.Windows.Forms.TextBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnParseEdgework = new System.Windows.Forms.Button();
             this.lblPorts = new System.Windows.Forms.Label();
             this.txtPorts = new System.Windows.Forms.TextBox();
-            this.btnParseEdgework = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.lblSerial = new System.Windows.Forms.Label();
+            this.txtSerial = new System.Windows.Forms.TextBox();
+            this.nudHolders = new System.Windows.Forms.NumericUpDown();
+            this.lblHolders = new System.Windows.Forms.Label();
+            this.nudBatteries = new System.Windows.Forms.NumericUpDown();
+            this.lblBatteries = new System.Windows.Forms.Label();
+            this.lblLit = new System.Windows.Forms.Label();
+            this.lblUnlit = new System.Windows.Forms.Label();
+            this.txtLitIndicators = new System.Windows.Forms.TextBox();
+            this.txtUnlitIndicators = new System.Windows.Forms.TextBox();
             this.erpEdgeworkValidator = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblCurrentEdges = new System.Windows.Forms.Label();
             this.grpEdgework.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBatteries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHolders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBatteries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpEdgeworkValidator)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,70 +86,43 @@
             this.grpEdgework.TabStop = false;
             this.grpEdgework.Text = "Edgework";
             // 
-            // txtUnlitIndicators
+            // btnReset
             // 
-            this.txtUnlitIndicators.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUnlitIndicators.Location = new System.Drawing.Point(89, 66);
-            this.txtUnlitIndicators.Name = "txtUnlitIndicators";
-            this.txtUnlitIndicators.Size = new System.Drawing.Size(142, 20);
-            this.txtUnlitIndicators.TabIndex = 5;
+            this.btnReset.Location = new System.Drawing.Point(9, 253);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(222, 23);
+            this.btnReset.TabIndex = 13;
+            this.btnReset.Text = "Reset Fields";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // txtLitIndicators
+            // btnParseEdgework
             // 
-            this.txtLitIndicators.Location = new System.Drawing.Point(89, 92);
-            this.txtLitIndicators.Name = "txtLitIndicators";
-            this.txtLitIndicators.Size = new System.Drawing.Size(142, 20);
-            this.txtLitIndicators.TabIndex = 7;
+            this.btnParseEdgework.Location = new System.Drawing.Point(9, 224);
+            this.btnParseEdgework.Name = "btnParseEdgework";
+            this.btnParseEdgework.Size = new System.Drawing.Size(222, 23);
+            this.btnParseEdgework.TabIndex = 12;
+            this.btnParseEdgework.Text = "Validate and Apply";
+            this.btnParseEdgework.UseVisualStyleBackColor = true;
+            this.btnParseEdgework.Click += new System.EventHandler(this.applyEdgework);
             // 
-            // lblUnlit
+            // lblPorts
             // 
-            this.lblUnlit.AutoSize = true;
-            this.lblUnlit.Location = new System.Drawing.Point(6, 69);
-            this.lblUnlit.Name = "lblUnlit";
-            this.lblUnlit.Size = new System.Drawing.Size(77, 13);
-            this.lblUnlit.TabIndex = 4;
-            this.lblUnlit.Text = "Unlit Indicators";
+            this.lblPorts.AutoSize = true;
+            this.lblPorts.Location = new System.Drawing.Point(6, 121);
+            this.lblPorts.Name = "lblPorts";
+            this.lblPorts.Size = new System.Drawing.Size(31, 13);
+            this.lblPorts.TabIndex = 8;
+            this.lblPorts.Text = "Ports";
             // 
-            // lblLit
+            // txtPorts
             // 
-            this.lblLit.AutoSize = true;
-            this.lblLit.Location = new System.Drawing.Point(6, 95);
-            this.lblLit.Name = "lblLit";
-            this.lblLit.Size = new System.Drawing.Size(67, 13);
-            this.lblLit.TabIndex = 6;
-            this.lblLit.Text = "Lit Indicators";
-            // 
-            // lblBatteries
-            // 
-            this.lblBatteries.AutoSize = true;
-            this.lblBatteries.Location = new System.Drawing.Point(6, 16);
-            this.lblBatteries.Name = "lblBatteries";
-            this.lblBatteries.Size = new System.Drawing.Size(48, 13);
-            this.lblBatteries.TabIndex = 0;
-            this.lblBatteries.Text = "Batteries";
-            // 
-            // nudBatteries
-            // 
-            this.nudBatteries.Location = new System.Drawing.Point(89, 14);
-            this.nudBatteries.Name = "nudBatteries";
-            this.nudBatteries.Size = new System.Drawing.Size(142, 20);
-            this.nudBatteries.TabIndex = 1;
-            // 
-            // nudHolders
-            // 
-            this.nudHolders.Location = new System.Drawing.Point(89, 40);
-            this.nudHolders.Name = "nudHolders";
-            this.nudHolders.Size = new System.Drawing.Size(142, 20);
-            this.nudHolders.TabIndex = 3;
-            // 
-            // lblHolders
-            // 
-            this.lblHolders.AutoSize = true;
-            this.lblHolders.Location = new System.Drawing.Point(6, 42);
-            this.lblHolders.Name = "lblHolders";
-            this.lblHolders.Size = new System.Drawing.Size(79, 13);
-            this.lblHolders.TabIndex = 2;
-            this.lblHolders.Text = "Battery Holders";
+            this.txtPorts.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPorts.Location = new System.Drawing.Point(89, 118);
+            this.txtPorts.Multiline = true;
+            this.txtPorts.Name = "txtPorts";
+            this.txtPorts.Size = new System.Drawing.Size(142, 73);
+            this.txtPorts.TabIndex = 9;
             // 
             // lblSerial
             // 
@@ -169,44 +142,70 @@
             this.txtSerial.Size = new System.Drawing.Size(142, 20);
             this.txtSerial.TabIndex = 11;
             // 
-            // lblPorts
+            // nudHolders
             // 
-            this.lblPorts.AutoSize = true;
-            this.lblPorts.Location = new System.Drawing.Point(6, 121);
-            this.lblPorts.Name = "lblPorts";
-            this.lblPorts.Size = new System.Drawing.Size(31, 13);
-            this.lblPorts.TabIndex = 8;
-            this.lblPorts.Text = "Ports";
+            this.nudHolders.Location = new System.Drawing.Point(89, 40);
+            this.nudHolders.Name = "nudHolders";
+            this.nudHolders.Size = new System.Drawing.Size(142, 20);
+            this.nudHolders.TabIndex = 3;
             // 
-            // txtPorts
+            // lblHolders
             // 
-            this.txtPorts.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPorts.Location = new System.Drawing.Point(89, 118);
-            this.txtPorts.Multiline = true;
-            this.txtPorts.Name = "txtPorts";
-            this.txtPorts.Size = new System.Drawing.Size(142, 73);
-            this.txtPorts.TabIndex = 9;
-            this.txtPorts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorts_KeyPress);
+            this.lblHolders.AutoSize = true;
+            this.lblHolders.Location = new System.Drawing.Point(6, 42);
+            this.lblHolders.Name = "lblHolders";
+            this.lblHolders.Size = new System.Drawing.Size(79, 13);
+            this.lblHolders.TabIndex = 2;
+            this.lblHolders.Text = "Battery Holders";
             // 
-            // btnParseEdgework
+            // nudBatteries
             // 
-            this.btnParseEdgework.Location = new System.Drawing.Point(9, 224);
-            this.btnParseEdgework.Name = "btnParseEdgework";
-            this.btnParseEdgework.Size = new System.Drawing.Size(222, 23);
-            this.btnParseEdgework.TabIndex = 12;
-            this.btnParseEdgework.Text = "Validate and Apply";
-            this.btnParseEdgework.UseVisualStyleBackColor = true;
-            this.btnParseEdgework.Click += new System.EventHandler(this.applyEdgework);
+            this.nudBatteries.Location = new System.Drawing.Point(89, 14);
+            this.nudBatteries.Name = "nudBatteries";
+            this.nudBatteries.Size = new System.Drawing.Size(142, 20);
+            this.nudBatteries.TabIndex = 1;
             // 
-            // btnReset
+            // lblBatteries
             // 
-            this.btnReset.Location = new System.Drawing.Point(9, 253);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(222, 23);
-            this.btnReset.TabIndex = 13;
-            this.btnReset.Text = "Reset Fields";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.lblBatteries.AutoSize = true;
+            this.lblBatteries.Location = new System.Drawing.Point(6, 16);
+            this.lblBatteries.Name = "lblBatteries";
+            this.lblBatteries.Size = new System.Drawing.Size(48, 13);
+            this.lblBatteries.TabIndex = 0;
+            this.lblBatteries.Text = "Batteries";
+            // 
+            // lblLit
+            // 
+            this.lblLit.AutoSize = true;
+            this.lblLit.Location = new System.Drawing.Point(6, 95);
+            this.lblLit.Name = "lblLit";
+            this.lblLit.Size = new System.Drawing.Size(67, 13);
+            this.lblLit.TabIndex = 6;
+            this.lblLit.Text = "Lit Indicators";
+            // 
+            // lblUnlit
+            // 
+            this.lblUnlit.AutoSize = true;
+            this.lblUnlit.Location = new System.Drawing.Point(6, 69);
+            this.lblUnlit.Name = "lblUnlit";
+            this.lblUnlit.Size = new System.Drawing.Size(77, 13);
+            this.lblUnlit.TabIndex = 4;
+            this.lblUnlit.Text = "Unlit Indicators";
+            // 
+            // txtLitIndicators
+            // 
+            this.txtLitIndicators.Location = new System.Drawing.Point(89, 92);
+            this.txtLitIndicators.Name = "txtLitIndicators";
+            this.txtLitIndicators.Size = new System.Drawing.Size(142, 20);
+            this.txtLitIndicators.TabIndex = 7;
+            // 
+            // txtUnlitIndicators
+            // 
+            this.txtUnlitIndicators.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtUnlitIndicators.Location = new System.Drawing.Point(89, 66);
+            this.txtUnlitIndicators.Name = "txtUnlitIndicators";
+            this.txtUnlitIndicators.Size = new System.Drawing.Size(142, 20);
+            this.txtUnlitIndicators.TabIndex = 5;
             // 
             // erpEdgeworkValidator
             // 
@@ -234,8 +233,8 @@
             this.Text = "KTANE Solver";
             this.grpEdgework.ResumeLayout(false);
             this.grpEdgework.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBatteries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHolders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBatteries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpEdgeworkValidator)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

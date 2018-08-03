@@ -297,6 +297,7 @@
             this.chkSerialOdd.Text = "The last digit of the serial\r\nnumber is odd";
             this.chkSerialOdd.UseVisualStyleBackColor = true;
             this.chkSerialOdd.CheckedChanged += new System.EventHandler(this.refreshChecked);
+            this.chkSerialOdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.clickedOnCheckbox);
             // 
             // frmSimpleWires
             // 

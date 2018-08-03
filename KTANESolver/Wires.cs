@@ -252,6 +252,11 @@ namespace SimpleWires
             spawnWebPage("http://www.bombmanual.com/manual/1/html/index.html");
         }
 
+        private void clickedOnCheckbox(object sender, MouseEventArgs e)
+        {
+
+        }
+
         private void optimizedManualClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             spawnWebPage("https://ktane.timwi.de/HTML/Wires%20optimized%20(Timwi).html");

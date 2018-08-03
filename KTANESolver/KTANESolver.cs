@@ -75,27 +75,6 @@ namespace KTANESolver
 
         }
 
-        private void txtPorts_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //This prevents unparsable inputs from being entered until I can figure out why it seems to change which
-            //newline escape character it uses every time I restart the program
-            //This logic got reaallly, really messy, and I blame the fact that newline is really hard to truly nail down
-            //I'll try to fix it later.
-            bool validInput = (Char.IsLetterOrDigit(e.KeyChar) || (e.KeyChar == ','));
-            bool isNotNewLine = ((e.KeyChar != '\r') && (e.KeyChar != '\n'));
-            isNotNewLine = (Char.IsControl(e.KeyChar) && isNotNewLine);
-            validInput = (validInput || isNotNewLine);
-            if (!validInput)
-            {
-                erpEdgeworkValidator.SetError(txtPorts, "Please enter only letters, numbers, and commas.");
-                e.Handled = true;
-            }
-            else
-            {
-                erpEdgeworkValidator.SetError(txtPorts, string.Empty);
-            }
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtLitIndicators.ResetText();
