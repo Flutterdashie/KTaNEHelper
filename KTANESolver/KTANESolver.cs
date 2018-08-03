@@ -77,11 +77,30 @@ namespace KTANESolver
 
         private void txtPorts_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //This prevents enter from being pressed in the port input, parser can't handle it right now.
-            if (e.KeyChar == '\n')
+            //This prevents unparsable inputs from being entered until I can figure out why it seems to change which
+            //newline escape character it uses every time I restart the program
+            //This logic got reaallly, really messy, and I blame the fact that newline is really hard to truly nail down
+            //I'll try to fix it later.
+            bool validInput = (Char.IsLetterOrDigit(e.KeyChar) || (e.KeyChar == ','));
+            bool isNotNewLine = ((e.KeyChar != '\r') && (e.KeyChar != '\n'));
+            isNotNewLine = (Char.IsControl(e.KeyChar) && isNotNewLine);
+            validInput = (validInput || isNotNewLine);
+            if (!validInput)
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtLitIndicators.ResetText();
+            txtUnlitIndicators.ResetText();
+            txtSerial.ResetText();
+            txtPorts.ResetText();
+            nudBatteries.ResetText();
+            nudHolders.ResetText();
+            lblCurrentEdges.Text = "Current Edgework: Not yet applied";
+            edgeworkReady = false;
         }
     }
 }
