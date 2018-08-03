@@ -87,7 +87,12 @@ namespace KTANESolver
             validInput = (validInput || isNotNewLine);
             if (!validInput)
             {
+                erpEdgeworkValidator.SetError(txtPorts, "Please enter only letters, numbers, and commas.");
                 e.Handled = true;
+            }
+            else
+            {
+                erpEdgeworkValidator.SetError(txtPorts, string.Empty);
             }
         }
 
