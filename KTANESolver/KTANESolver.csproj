@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Edgework.cs" />
+    <Compile Include="ComplexWires.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComplexWires.Designer.cs">
+      <DependentUpon>ComplexWires.cs</DependentUpon>
+    </Compile>
     <Compile Include="KTANESolver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     <Compile Include="Wires.Designer.cs">
       <DependentUpon>Wires.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ComplexWires.resx">
+      <DependentUpon>ComplexWires.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KTANESolver.resx">
       <DependentUpon>KTANESolver.cs</DependentUpon>
     </EmbeddedResource>

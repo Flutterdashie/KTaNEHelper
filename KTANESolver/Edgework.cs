@@ -17,7 +17,7 @@ namespace KTANESolver
      * I was originally planning to use the common shorthand found on Twitch Plays to allow for quicker setup, but it seems
      * like it'd be FAR more trouble than it's worth. Maybe some other time.
      */
-    class Edgework
+    public class Edgework
     {
         private int batteryAA, batteryD, batteryHolders, batteryTotal;
         private List<String> litIndicators, unlitIndicators, ports;
