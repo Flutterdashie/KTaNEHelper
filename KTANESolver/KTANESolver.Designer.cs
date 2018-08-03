@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnLaunchWires = new System.Windows.Forms.Button();
             this.grpEdgework = new System.Windows.Forms.GroupBox();
             this.txtUnlitIndicators = new System.Windows.Forms.TextBox();
@@ -42,14 +43,18 @@
             this.txtSerial = new System.Windows.Forms.TextBox();
             this.lblPorts = new System.Windows.Forms.Label();
             this.txtPorts = new System.Windows.Forms.TextBox();
+            this.btnParseEdgework = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.erpEdgeworkValidator = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpEdgework.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBatteries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHolders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpEdgeworkValidator)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLaunchWires
             // 
-            this.btnLaunchWires.Location = new System.Drawing.Point(13, 289);
+            this.btnLaunchWires.Location = new System.Drawing.Point(12, 343);
             this.btnLaunchWires.Name = "btnLaunchWires";
             this.btnLaunchWires.Size = new System.Drawing.Size(139, 54);
             this.btnLaunchWires.TabIndex = 1;
@@ -59,6 +64,8 @@
             // 
             // grpEdgework
             // 
+            this.grpEdgework.Controls.Add(this.btnReset);
+            this.grpEdgework.Controls.Add(this.btnParseEdgework);
             this.grpEdgework.Controls.Add(this.lblPorts);
             this.grpEdgework.Controls.Add(this.txtPorts);
             this.grpEdgework.Controls.Add(this.lblSerial);
@@ -73,7 +80,7 @@
             this.grpEdgework.Controls.Add(this.txtUnlitIndicators);
             this.grpEdgework.Location = new System.Drawing.Point(13, 13);
             this.grpEdgework.Name = "grpEdgework";
-            this.grpEdgework.Size = new System.Drawing.Size(237, 270);
+            this.grpEdgework.Size = new System.Drawing.Size(268, 285);
             this.grpEdgework.TabIndex = 0;
             this.grpEdgework.TabStop = false;
             this.grpEdgework.Text = "Edgework";
@@ -178,6 +185,29 @@
             this.txtPorts.Size = new System.Drawing.Size(142, 73);
             this.txtPorts.TabIndex = 9;
             // 
+            // btnParseEdgework
+            // 
+            this.btnParseEdgework.Location = new System.Drawing.Point(9, 224);
+            this.btnParseEdgework.Name = "btnParseEdgework";
+            this.btnParseEdgework.Size = new System.Drawing.Size(222, 23);
+            this.btnParseEdgework.TabIndex = 12;
+            this.btnParseEdgework.Text = "Validate and Apply";
+            this.btnParseEdgework.UseVisualStyleBackColor = true;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(9, 253);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(222, 23);
+            this.btnReset.TabIndex = 13;
+            this.btnReset.Text = "Reset Fields";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // erpEdgeworkValidator
+            // 
+            this.erpEdgeworkValidator.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erpEdgeworkValidator.ContainerControl = this;
+            // 
             // KTANESolver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +221,7 @@
             this.grpEdgework.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBatteries)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHolders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpEdgeworkValidator)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,6 +242,9 @@
         private System.Windows.Forms.TextBox txtSerial;
         private System.Windows.Forms.Label lblPorts;
         private System.Windows.Forms.TextBox txtPorts;
+        private System.Windows.Forms.Button btnParseEdgework;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ErrorProvider erpEdgeworkValidator;
     }
 }
 
