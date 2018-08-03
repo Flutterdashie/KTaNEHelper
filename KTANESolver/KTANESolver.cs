@@ -8,15 +8,26 @@ namespace KTANESolver
     {
         private static Regex VALID_SERIAL_REGEX = new Regex("^[A-Z0-9][A-Z0-9][0-9][A-Z][A-Z][0-9]$");
         private Edgework edgework;
+        private bool edgeworkReady;
         public KTANESolver()
         {
             InitializeComponent();
+            edgeworkReady = false;
         }
 
         private void btnLaunchWires_Click(object sender, EventArgs e)
         {
-            Form simpleWires = new SimpleWires.frmSimpleWires();
-            simpleWires.Show();
+            if (edgeworkReady)
+            {
+                Form simpleWires = new SimpleWires.frmSimpleWires(edgework.isSerialOdd());
+                simpleWires.Show();
+            }
+            else
+            {
+                Form simpleWires = new SimpleWires.frmSimpleWires();
+                simpleWires.Show();
+            }
+            
         }
 
         private void applyEdgework(object sender, EventArgs e)
@@ -55,6 +66,11 @@ namespace KTANESolver
             {
                 edgework = new Edgework(numBatteries, numHolders, litList, unlitList, portList, serialNum);
                 lblCurrentEdges.Text = "Current Edgework: " + edgework.ToString();
+                edgeworkReady = true;
+            }
+            else
+            {
+                edgeworkReady = false;
             }
 
         }

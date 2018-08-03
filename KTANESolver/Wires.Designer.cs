@@ -43,12 +43,12 @@
             this.lblWire5 = new System.Windows.Forms.Label();
             this.lblWire6 = new System.Windows.Forms.Label();
             this.tlpControlsOutput = new System.Windows.Forms.TableLayoutPanel();
+            this.linkOptimizedManual = new System.Windows.Forms.LinkLabel();
             this.lblCutNumber = new System.Windows.Forms.Label();
+            this.linkNormalManual = new System.Windows.Forms.LinkLabel();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.chkSerialOdd = new System.Windows.Forms.CheckBox();
-            this.linkNormalManual = new System.Windows.Forms.LinkLabel();
-            this.linkOptimizedManual = new System.Windows.Forms.LinkLabel();
             this.tlpWireControls.SuspendLayout();
             this.tlpCurrentWires.SuspendLayout();
             this.tlpControlsOutput.SuspendLayout();
@@ -236,6 +236,17 @@
             this.tlpControlsOutput.Size = new System.Drawing.Size(406, 117);
             this.tlpControlsOutput.TabIndex = 8;
             // 
+            // linkOptimizedManual
+            // 
+            this.linkOptimizedManual.AutoSize = true;
+            this.linkOptimizedManual.Location = new System.Drawing.Point(206, 95);
+            this.linkOptimizedManual.Name = "linkOptimizedManual";
+            this.linkOptimizedManual.Size = new System.Drawing.Size(91, 13);
+            this.linkOptimizedManual.TabIndex = 10;
+            this.linkOptimizedManual.TabStop = true;
+            this.linkOptimizedManual.Text = "Optimized Manual";
+            this.linkOptimizedManual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.optimizedManualClicked);
+            // 
             // lblCutNumber
             // 
             this.lblCutNumber.AutoSize = true;
@@ -244,6 +255,17 @@
             this.lblCutNumber.Size = new System.Drawing.Size(174, 13);
             this.lblCutNumber.TabIndex = 0;
             this.lblCutNumber.Text = "Don\'t cut yet, I\'m not done thinking!";
+            // 
+            // linkNormalManual
+            // 
+            this.linkNormalManual.AutoSize = true;
+            this.linkNormalManual.Location = new System.Drawing.Point(3, 95);
+            this.linkNormalManual.Name = "linkNormalManual";
+            this.linkNormalManual.Size = new System.Drawing.Size(78, 13);
+            this.linkNormalManual.TabIndex = 9;
+            this.linkNormalManual.TabStop = true;
+            this.linkNormalManual.Text = "Normal Manual";
+            this.linkNormalManual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.normalManualClicked);
             // 
             // btnSubmit
             // 
@@ -275,28 +297,6 @@
             this.chkSerialOdd.Text = "The last digit of the serial\r\nnumber is odd";
             this.chkSerialOdd.UseVisualStyleBackColor = true;
             this.chkSerialOdd.CheckedChanged += new System.EventHandler(this.refreshChecked);
-            // 
-            // linkNormalManual
-            // 
-            this.linkNormalManual.AutoSize = true;
-            this.linkNormalManual.Location = new System.Drawing.Point(3, 95);
-            this.linkNormalManual.Name = "linkNormalManual";
-            this.linkNormalManual.Size = new System.Drawing.Size(78, 13);
-            this.linkNormalManual.TabIndex = 9;
-            this.linkNormalManual.TabStop = true;
-            this.linkNormalManual.Text = "Normal Manual";
-            this.linkNormalManual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.normalManualClicked);
-            // 
-            // linkOptimizedManual
-            // 
-            this.linkOptimizedManual.AutoSize = true;
-            this.linkOptimizedManual.Location = new System.Drawing.Point(206, 95);
-            this.linkOptimizedManual.Name = "linkOptimizedManual";
-            this.linkOptimizedManual.Size = new System.Drawing.Size(91, 13);
-            this.linkOptimizedManual.TabIndex = 10;
-            this.linkOptimizedManual.TabStop = true;
-            this.linkOptimizedManual.Text = "Optimized Manual";
-            this.linkOptimizedManual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.optimizedManualClicked);
             // 
             // frmSimpleWires
             // 

@@ -82,6 +82,10 @@ namespace KTANESolver
             shorthand += " // " + serialNum;
             return shorthand;
         }
+        public bool isSerialOdd()
+        {
+            return ((int.Parse(serialNum.LastOrDefault().ToString()) % 2) == 1);
+        }
 
     }
 }

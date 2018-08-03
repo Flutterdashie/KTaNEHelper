@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KTANESolver;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +16,25 @@ namespace SimpleWires
     {
         private WireList wireList;
         private static List<String> THREE_WIRE_TEST = new List<String>{ "blue", "blue", "red"};
+        private bool edgeworkInherited, serialIsOdd;
         public frmSimpleWires()
         {
             InitializeComponent();
             wireList = new WireList();
             updateWireView();
             updateButtonStatus();
+            edgeworkInherited = false;
+        }
+        public frmSimpleWires(bool serialOdd)
+        {
+            InitializeComponent();
+            wireList = new WireList();
+            updateWireView();
+            updateButtonStatus();
+            edgeworkInherited = true;
+            serialIsOdd = serialOdd;
+            chkSerialOdd.Checked = serialIsOdd;
+            chkSerialOdd.Enabled = false;
         }
 
         private void updateWireView()
@@ -125,7 +139,10 @@ namespace SimpleWires
 
         private void resetForm(object sender, EventArgs e)
         {
-            chkSerialOdd.Checked = false;
+            if (!edgeworkInherited)
+            {
+                chkSerialOdd.Checked = false;
+            }
             wireList.resetList();
             updateWireView();
             updateButtonStatus();
