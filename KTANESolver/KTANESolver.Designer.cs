@@ -46,6 +46,7 @@
             this.btnParseEdgework = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.erpEdgeworkValidator = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblCurrentEdges = new System.Windows.Forms.Label();
             this.grpEdgework.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBatteries)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHolders)).BeginInit();
@@ -163,6 +164,7 @@
             // 
             this.txtSerial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSerial.Location = new System.Drawing.Point(89, 197);
+            this.txtSerial.MaxLength = 6;
             this.txtSerial.Name = "txtSerial";
             this.txtSerial.Size = new System.Drawing.Size(142, 20);
             this.txtSerial.TabIndex = 11;
@@ -184,6 +186,7 @@
             this.txtPorts.Name = "txtPorts";
             this.txtPorts.Size = new System.Drawing.Size(142, 73);
             this.txtPorts.TabIndex = 9;
+            this.txtPorts.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorts_KeyPress);
             // 
             // btnParseEdgework
             // 
@@ -209,11 +212,21 @@
             this.erpEdgeworkValidator.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.erpEdgeworkValidator.ContainerControl = this;
             // 
+            // lblCurrentEdges
+            // 
+            this.lblCurrentEdges.AutoSize = true;
+            this.lblCurrentEdges.Location = new System.Drawing.Point(268, 13);
+            this.lblCurrentEdges.Name = "lblCurrentEdges";
+            this.lblCurrentEdges.Size = new System.Drawing.Size(169, 13);
+            this.lblCurrentEdges.TabIndex = 2;
+            this.lblCurrentEdges.Text = "Current Edgework: Not yet applied";
+            // 
             // KTANESolver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCurrentEdges);
             this.Controls.Add(this.grpEdgework);
             this.Controls.Add(this.btnLaunchWires);
             this.Name = "KTANESolver";
@@ -224,6 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHolders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpEdgeworkValidator)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -246,6 +260,7 @@
         private System.Windows.Forms.Button btnParseEdgework;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.ErrorProvider erpEdgeworkValidator;
+        private System.Windows.Forms.Label lblCurrentEdges;
     }
 }
 

@@ -47,12 +47,18 @@ namespace KTANESolver
             List<String> tempList = new List<String>();
             if(commaList.Length != 0)
             {
+                //At this time, I'm having quite the adventure trying to get the parser to ignore newlines.
+                //Temporary fix: I disabled pressing the enter key while inside the port textbox.
                 commaList.Trim();
                 String[] matrixOutput = commaList.Split(',');
-                foreach(String x in matrixOutput)
+                for (int i = 0; i < matrixOutput.Length; i++)
                 {
-                    x.Trim();
-                    tempList.Add(x);
+                    string x = matrixOutput[i];
+                    x.Trim('\r', ' ', '\n');
+                    if (!x.Equals(String.Empty))
+                    {
+                        tempList.Add(x);
+                    }
                 }
             }
             return tempList;

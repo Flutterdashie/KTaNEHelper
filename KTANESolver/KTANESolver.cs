@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace KTANESolver
 {
     public partial class KTANESolver : Form
     {
+        private static Regex VALID_SERIAL_REGEX = new Regex("^[A-Z0-9][A-Z0-9][0-9][A-Z][A-Z][0-9]$");
         private Edgework edgework;
         public KTANESolver()
         {
@@ -21,6 +23,9 @@ namespace KTANESolver
         {
             //Time for a whole lot of checking!
             //Here's some temporary variables to make it easier to read everything and have fewer calls to controls mid-statement.
+            //Shoutouts to @Blananas2#6835 in the KTaNE discord for making a post long ago explaining the format of the serial number.
+            //I then turned his post into a regex! Could probably use a little optimization, but it'll do for now
+            //I tried to use the [[:alpha:]] shorthand in it but apparently it doesn't like that
             bool readyToApply = true;
             erpEdgeworkValidator.Clear();
             int numBatteries = decimal.ToInt32(nudBatteries.Value);
@@ -41,12 +46,26 @@ namespace KTANESolver
                 readyToApply = false;
                 erpEdgeworkValidator.SetError(nudBatteries, "There must not be more than 2 batteries per holder.");
             }
-
+            if (!VALID_SERIAL_REGEX.IsMatch(serialNum))
+            {
+                readyToApply = false;
+                erpEdgeworkValidator.SetError(txtSerial, "Invalid serial number. Must be in the form XXNLLN, where X is alphanumeric, N is a number, and L is a letter.");
+            }
             if(readyToApply)
             {
-                this.edgework = new Edgework(numBatteries, numHolders, litList, unlitList, portList, serialNum);
+                edgework = new Edgework(numBatteries, numHolders, litList, unlitList, portList, serialNum);
+                lblCurrentEdges.Text = "Current Edgework: " + edgework.ToString();
             }
 
+        }
+
+        private void txtPorts_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //This prevents enter from being pressed in the port input, parser can't handle it right now.
+            if (e.KeyChar == '\n')
+            {
+                e.Handled = true;
+            }
         }
     }
 }
