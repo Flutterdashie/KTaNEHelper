@@ -34,8 +34,8 @@ namespace SimpleWires
             edgeworkInherited = true;
             serialIsOdd = edges.isSerialOdd();
             chkSerialOdd.Checked = serialIsOdd;
-            chkSerialOdd.Enabled = false;
-            chkSerialOdd.Text = "Serial number inherited from current\n bomb.";
+            chkSerialOdd.AutoCheck = false;
+            chkSerialOdd.Text = "SN odd status locked to current\n edgework. Mouse2 to unlock.";
         }
 
         private void updateWireView()
@@ -254,7 +254,13 @@ namespace SimpleWires
 
         private void clickedOnCheckbox(object sender, MouseEventArgs e)
         {
-
+            if(e.Button== MouseButtons.Right)
+            {
+                //Commence unlock sequence!
+                chkSerialOdd.Text = "The last digit of the serial\nnumber is odd";
+                chkSerialOdd.AutoCheck = true;
+                edgeworkInherited = false;
+            }
         }
 
         private void optimizedManualClicked(object sender, LinkLabelLinkClickedEventArgs e)
