@@ -47,6 +47,7 @@
             this.txtUnlitIndicators = new System.Windows.Forms.TextBox();
             this.erpEdgeworkValidator = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblCurrentEdges = new System.Windows.Forms.Label();
+            this.btnComplexWires = new System.Windows.Forms.Button();
             this.grpEdgework.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHolders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBatteries)).BeginInit();
@@ -55,7 +56,7 @@
             // 
             // btnLaunchWires
             // 
-            this.btnLaunchWires.Location = new System.Drawing.Point(12, 343);
+            this.btnLaunchWires.Location = new System.Drawing.Point(12, 304);
             this.btnLaunchWires.Name = "btnLaunchWires";
             this.btnLaunchWires.Size = new System.Drawing.Size(139, 54);
             this.btnLaunchWires.TabIndex = 1;
@@ -221,11 +222,22 @@
             this.lblCurrentEdges.TabIndex = 2;
             this.lblCurrentEdges.Text = "Current Edgework: Not yet applied";
             // 
+            // btnComplexWires
+            // 
+            this.btnComplexWires.Location = new System.Drawing.Point(157, 304);
+            this.btnComplexWires.Name = "btnComplexWires";
+            this.btnComplexWires.Size = new System.Drawing.Size(139, 54);
+            this.btnComplexWires.TabIndex = 3;
+            this.btnComplexWires.Text = "Complex Wires";
+            this.btnComplexWires.UseVisualStyleBackColor = true;
+            this.btnComplexWires.Click += new System.EventHandler(this.btnComplexWires_Click);
+            // 
             // KTANESolver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnComplexWires);
             this.Controls.Add(this.lblCurrentEdges);
             this.Controls.Add(this.grpEdgework);
             this.Controls.Add(this.btnLaunchWires);
@@ -261,6 +273,7 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.ErrorProvider erpEdgeworkValidator;
         private System.Windows.Forms.Label lblCurrentEdges;
+        private System.Windows.Forms.Button btnComplexWires;
     }
 }
 

@@ -86,5 +86,19 @@ namespace KTANESolver
             lblCurrentEdges.Text = "Current Edgework: Not yet applied";
             edgeworkReady = false;
         }
+
+        private void btnComplexWires_Click(object sender, EventArgs e)
+        {
+            if (edgeworkReady)
+            {
+                Form complexWires = new frmComplexWires(edgework);
+                complexWires.Show();
+            }
+            else
+            {
+                Form complexWires = new frmComplexWires();
+                complexWires.Show();
+            }
+        }
     }
 }
