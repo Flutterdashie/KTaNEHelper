@@ -73,6 +73,7 @@
             this.btnSubmitWire.TabIndex = 1;
             this.btnSubmitWire.Text = "Submit";
             this.btnSubmitWire.UseVisualStyleBackColor = true;
+            this.btnSubmitWire.Click += new System.EventHandler(this.calculateWire);
             // 
             // btnClearWireInput
             // 
@@ -115,6 +116,7 @@
             this.btnLockToggle.TabIndex = 1;
             this.btnLockToggle.Text = "Toggle\r\nLock";
             this.btnLockToggle.UseVisualStyleBackColor = true;
+            this.btnLockToggle.Click += new System.EventHandler(this.toggleEdgeworkLock);
             // 
             // btnResetEdgework
             // 

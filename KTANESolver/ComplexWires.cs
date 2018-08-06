@@ -12,13 +12,29 @@ namespace KTANESolver
 {
     public partial class frmComplexWires : Form
     {
+        private Edgework currentBomb;
+        private bool lockState;
         public frmComplexWires()
         {
             InitializeComponent();
+            lockState = false;
         }
         public frmComplexWires(Edgework edges)
         {
-            
+            InitializeComponent();
+            currentBomb = edges;
+            lockState = true;
+
+        }
+
+        private void calculateWire(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toggleEdgeworkLock(object sender, EventArgs e)
+        {
+
         }
     }
 }
