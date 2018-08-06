@@ -41,5 +41,21 @@ namespace KTANESolver
             clbEdgeworkData.Enabled = !isUnlocked;
             btnResetEdgework.Enabled = !isUnlocked;
         }
+
+        private void btnResetEdgework_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < clbEdgeworkData.Items.Count; i++)
+            {
+                clbEdgeworkData.SetItemChecked(i, false);
+            }
+        }
+
+        private void btnClearWireInput_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < clbWireProperties.Items.Count; i++)
+            {
+                clbWireProperties.SetItemChecked(i, false);
+            }
+        }
     }
 }
