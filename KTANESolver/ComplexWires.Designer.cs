@@ -134,6 +134,7 @@
             // 
             this.lblCutOutput.AutoSize = true;
             this.lblCutOutput.Location = new System.Drawing.Point(12, 151);
+            this.lblCutOutput.MaximumSize = new System.Drawing.Size(270, 0);
             this.lblCutOutput.Name = "lblCutOutput";
             this.lblCutOutput.Size = new System.Drawing.Size(13, 13);
             this.lblCutOutput.TabIndex = 3;
@@ -143,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 175);
+            this.ClientSize = new System.Drawing.Size(287, 193);
             this.Controls.Add(this.lblCutOutput);
             this.Controls.Add(this.grpEdgeworkInfo);
             this.Controls.Add(this.grpWireData);

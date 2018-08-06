@@ -37,7 +37,7 @@ namespace KTANESolver
             {
                 checkBoxes[i] = clbWireProperties.GetItemChecked(i);
             }
-            lblCutOutput.Text = Char.ToString(getCutStatus(checkBoxes));
+            lblCutOutput.Text = useCutStatus(getCutStatus(checkBoxes));
         }
 
         private void toggleEdgeworkLock(object sender, EventArgs e)
@@ -176,6 +176,49 @@ namespace KTANESolver
             {
                 return '?';
             }
+        }
+
+        private String useCutStatus(char cutStatus)
+        {
+            
+            String outputString = "";
+            bool shouldCut;
+            switch(cutStatus)
+            {
+                case 'C':
+                    shouldCut = true;
+                    outputString = ", and the edgework was not relevant to this decision.";
+                    break;
+                case 'D':
+                    shouldCut = false;
+                    outputString = ", and the edgework was not relevant to this decision.";
+                    break;
+                case 'S':
+                    shouldCut = clbEdgeworkData.GetItemChecked(0);
+                    outputString = " because the serial number is ";
+                    outputString += shouldCut ? "even." : "odd.";
+                    break;
+                case 'B':
+                    shouldCut = clbEdgeworkData.GetItemChecked(1);
+                    outputString = " because the number of batteries on the bomb is ";
+                    outputString += shouldCut ? "" : "not ";
+                    outputString += "2+.";
+                    break;
+                case 'P':
+                    shouldCut = clbEdgeworkData.GetItemChecked(2);
+                    outputString = " because the bomb ";
+                    outputString += shouldCut ? "has " : "does not have ";
+                    outputString += "a parallel port.";
+                    break;
+                default:
+                    shouldCut = false;
+                    outputString = " because the wire logic ran into an error.";
+                    break;
+            }
+            String shouldCutText = "The wire should ";
+            shouldCutText += shouldCut ? "" : "NOT ";
+            shouldCutText += "be cut" + outputString;
+            return shouldCutText;
         }
     }
 }
