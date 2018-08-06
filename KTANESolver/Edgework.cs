@@ -30,6 +30,7 @@ namespace KTANESolver
             batteryTotal = 0;
             serialNum = "unknown";
         }
+
         public Edgework(int batteries, int holders, String litList, String unlitList, String portList, String serial)
         {
             batteryTotal = batteries;
@@ -42,6 +43,7 @@ namespace KTANESolver
             serialNum = serial.Trim();
 
         }
+
         public List<String> splitCommaList(String commaList)
         {
             List<String> tempList = new List<String>();
@@ -63,6 +65,7 @@ namespace KTANESolver
             }
             return tempList;
         }
+        
         public override string ToString()
         {
             string shorthand = batteryTotal + "B " + batteryHolders + "H //";
@@ -82,10 +85,36 @@ namespace KTANESolver
             shorthand += " // " + serialNum;
             return shorthand;
         }
+
         public bool isSerialOdd()
         {
             return ((int.Parse(serialNum.LastOrDefault().ToString()) % 2) == 1);
         }
+
+        public int portCount(String targetPort)
+        {
+            int numFound = 0;
+            foreach (String x in ports)
+            {
+                if (x.Equals(targetPort))
+                {
+                    numFound++;
+                }
+            }
+
+            return numFound;
+        }
+        
+        public int getBatteries()
+        {
+            return batteryTotal;
+        }
+
+        public int getHolders()
+        {
+            return batteryHolders;
+        }
+
 
     }
 }

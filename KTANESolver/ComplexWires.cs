@@ -13,18 +13,21 @@ namespace KTANESolver
     public partial class frmComplexWires : Form
     {
         private Edgework currentBomb;
-        private bool lockState;
         public frmComplexWires()
         {
             InitializeComponent();
-            lockState = false;
+            clbEdgeworkData.Enabled = true;
+            btnResetEdgework.Enabled = true;
         }
         public frmComplexWires(Edgework edges)
         {
             InitializeComponent();
             currentBomb = edges;
-            lockState = true;
-
+            clbEdgeworkData.Enabled = false;
+            btnResetEdgework.Enabled = false;
+            clbEdgeworkData.SetItemChecked(0, !(edges.isSerialOdd()));
+            clbEdgeworkData.SetItemChecked(1, (edges.getBatteries() >= 2));
+            clbEdgeworkData.SetItemChecked(2, (edges.portCount("PARALLEL") >= 1));
         }
 
         private void calculateWire(object sender, EventArgs e)
@@ -34,7 +37,9 @@ namespace KTANESolver
 
         private void toggleEdgeworkLock(object sender, EventArgs e)
         {
-
+            bool isUnlocked = clbEdgeworkData.Enabled;
+            clbEdgeworkData.Enabled = !isUnlocked;
+            btnResetEdgework.Enabled = !isUnlocked;
         }
     }
 }
