@@ -36,6 +36,7 @@
             this.btnResetEdgework = new System.Windows.Forms.Button();
             this.btnLockToggle = new System.Windows.Forms.Button();
             this.clbEdgeworkData = new System.Windows.Forms.CheckedListBox();
+            this.lblCutOutput = new System.Windows.Forms.Label();
             this.grpWireData.SuspendLayout();
             this.grpEdgeworkInfo.SuspendLayout();
             this.SuspendLayout();
@@ -129,11 +130,21 @@
             this.clbEdgeworkData.Size = new System.Drawing.Size(125, 49);
             this.clbEdgeworkData.TabIndex = 0;
             // 
+            // lblCutOutput
+            // 
+            this.lblCutOutput.AutoSize = true;
+            this.lblCutOutput.Location = new System.Drawing.Point(12, 151);
+            this.lblCutOutput.Name = "lblCutOutput";
+            this.lblCutOutput.Size = new System.Drawing.Size(13, 13);
+            this.lblCutOutput.TabIndex = 3;
+            this.lblCutOutput.Text = "?";
+            // 
             // frmComplexWires
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(287, 175);
+            this.Controls.Add(this.lblCutOutput);
             this.Controls.Add(this.grpEdgeworkInfo);
             this.Controls.Add(this.grpWireData);
             this.Name = "frmComplexWires";
@@ -141,6 +152,7 @@
             this.grpWireData.ResumeLayout(false);
             this.grpEdgeworkInfo.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -154,5 +166,6 @@
         private System.Windows.Forms.CheckedListBox clbEdgeworkData;
         private System.Windows.Forms.Button btnLockToggle;
         private System.Windows.Forms.Button btnResetEdgework;
+        private System.Windows.Forms.Label lblCutOutput;
     }
 }
