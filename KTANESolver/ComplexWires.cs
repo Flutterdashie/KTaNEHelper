@@ -220,5 +220,10 @@ namespace KTANESolver
             shouldCutText += "be cut" + outputString;
             return shouldCutText;
         }
+
+        private void anyOptionChanged(object sender, ItemCheckEventArgs e)
+        {
+            lblCutOutput.Text = "Not yet calculated.";
+        }
     }
 }

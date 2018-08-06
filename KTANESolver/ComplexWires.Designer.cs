@@ -43,6 +43,7 @@
             // 
             // clbWireProperties
             // 
+            this.clbWireProperties.CheckOnClick = true;
             this.clbWireProperties.FormattingEnabled = true;
             this.clbWireProperties.Items.AddRange(new object[] {
             "Red",
@@ -53,6 +54,7 @@
             this.clbWireProperties.Name = "clbWireProperties";
             this.clbWireProperties.Size = new System.Drawing.Size(50, 64);
             this.clbWireProperties.TabIndex = 0;
+            this.clbWireProperties.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.anyOptionChanged);
             // 
             // grpWireData
             // 
@@ -120,6 +122,7 @@
             // 
             // clbEdgeworkData
             // 
+            this.clbEdgeworkData.CheckOnClick = true;
             this.clbEdgeworkData.FormattingEnabled = true;
             this.clbEdgeworkData.Items.AddRange(new object[] {
             "Even Serial No.",
@@ -129,6 +132,7 @@
             this.clbEdgeworkData.Name = "clbEdgeworkData";
             this.clbEdgeworkData.Size = new System.Drawing.Size(125, 49);
             this.clbEdgeworkData.TabIndex = 0;
+            this.clbEdgeworkData.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.anyOptionChanged);
             // 
             // lblCutOutput
             // 
@@ -136,9 +140,9 @@
             this.lblCutOutput.Location = new System.Drawing.Point(12, 151);
             this.lblCutOutput.MaximumSize = new System.Drawing.Size(270, 0);
             this.lblCutOutput.Name = "lblCutOutput";
-            this.lblCutOutput.Size = new System.Drawing.Size(13, 13);
+            this.lblCutOutput.Size = new System.Drawing.Size(96, 13);
             this.lblCutOutput.TabIndex = 3;
-            this.lblCutOutput.Text = "?";
+            this.lblCutOutput.Text = "Not yet calculated.";
             // 
             // frmComplexWires
             // 
