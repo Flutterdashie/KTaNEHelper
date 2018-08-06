@@ -32,7 +32,12 @@
             this.grpWireData = new System.Windows.Forms.GroupBox();
             this.btnSubmitWire = new System.Windows.Forms.Button();
             this.btnClearWireInput = new System.Windows.Forms.Button();
+            this.grpEdgeworkInfo = new System.Windows.Forms.GroupBox();
+            this.clbEdgeworkData = new System.Windows.Forms.CheckedListBox();
+            this.btnLockToggle = new System.Windows.Forms.Button();
+            this.btnResetEdgework = new System.Windows.Forms.Button();
             this.grpWireData.SuspendLayout();
+            this.grpEdgeworkInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // clbWireProperties
@@ -78,15 +83,59 @@
             this.btnClearWireInput.Text = "Clear";
             this.btnClearWireInput.UseVisualStyleBackColor = true;
             // 
+            // grpEdgeworkInfo
+            // 
+            this.grpEdgeworkInfo.Controls.Add(this.btnResetEdgework);
+            this.grpEdgeworkInfo.Controls.Add(this.btnLockToggle);
+            this.grpEdgeworkInfo.Controls.Add(this.clbEdgeworkData);
+            this.grpEdgeworkInfo.Location = new System.Drawing.Point(139, 13);
+            this.grpEdgeworkInfo.Name = "grpEdgeworkInfo";
+            this.grpEdgeworkInfo.Size = new System.Drawing.Size(138, 131);
+            this.grpEdgeworkInfo.TabIndex = 2;
+            this.grpEdgeworkInfo.TabStop = false;
+            this.grpEdgeworkInfo.Text = "Bomb Information";
+            // 
+            // clbEdgeworkData
+            // 
+            this.clbEdgeworkData.FormattingEnabled = true;
+            this.clbEdgeworkData.Items.AddRange(new object[] {
+            "Even Serial No.",
+            "Batteries >=2",
+            "Parallel Port"});
+            this.clbEdgeworkData.Location = new System.Drawing.Point(7, 18);
+            this.clbEdgeworkData.Name = "clbEdgeworkData";
+            this.clbEdgeworkData.Size = new System.Drawing.Size(125, 49);
+            this.clbEdgeworkData.TabIndex = 0;
+            // 
+            // btnLockToggle
+            // 
+            this.btnLockToggle.Location = new System.Drawing.Point(7, 74);
+            this.btnLockToggle.Name = "btnLockToggle";
+            this.btnLockToggle.Size = new System.Drawing.Size(59, 51);
+            this.btnLockToggle.TabIndex = 1;
+            this.btnLockToggle.Text = "Toggle\r\nLock";
+            this.btnLockToggle.UseVisualStyleBackColor = true;
+            // 
+            // btnResetEdgework
+            // 
+            this.btnResetEdgework.Location = new System.Drawing.Point(73, 74);
+            this.btnResetEdgework.Name = "btnResetEdgework";
+            this.btnResetEdgework.Size = new System.Drawing.Size(59, 51);
+            this.btnResetEdgework.TabIndex = 2;
+            this.btnResetEdgework.Text = "Clear";
+            this.btnResetEdgework.UseVisualStyleBackColor = true;
+            // 
             // frmComplexWires
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.grpEdgeworkInfo);
             this.Controls.Add(this.grpWireData);
             this.Name = "frmComplexWires";
             this.Text = "Complex Wires";
             this.grpWireData.ResumeLayout(false);
+            this.grpEdgeworkInfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -97,5 +146,9 @@
         private System.Windows.Forms.GroupBox grpWireData;
         private System.Windows.Forms.Button btnClearWireInput;
         private System.Windows.Forms.Button btnSubmitWire;
+        private System.Windows.Forms.GroupBox grpEdgeworkInfo;
+        private System.Windows.Forms.CheckedListBox clbEdgeworkData;
+        private System.Windows.Forms.Button btnLockToggle;
+        private System.Windows.Forms.Button btnResetEdgework;
     }
 }
