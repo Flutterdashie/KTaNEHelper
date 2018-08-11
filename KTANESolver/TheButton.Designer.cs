@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(1D, "1,1");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "1,0");
             this.cboButtonColor = new System.Windows.Forms.ComboBox();
             this.cboButtonText = new System.Windows.Forms.ComboBox();
             this.linkOptimizedButton = new System.Windows.Forms.LinkLabel();
@@ -52,6 +52,7 @@
             this.cboButtonColor.Name = "cboButtonColor";
             this.cboButtonColor.Size = new System.Drawing.Size(121, 21);
             this.cboButtonColor.TabIndex = 0;
+            this.cboButtonColor.SelectedValueChanged += new System.EventHandler(this.anythingChanged);
             // 
             // cboButtonText
             // 
@@ -66,6 +67,7 @@
             this.cboButtonText.Name = "cboButtonText";
             this.cboButtonText.Size = new System.Drawing.Size(121, 21);
             this.cboButtonText.TabIndex = 1;
+            this.cboButtonText.SelectedValueChanged += new System.EventHandler(this.anythingChanged);
             // 
             // linkOptimizedButton
             // 
@@ -92,17 +94,19 @@
             // chartButtonVisual
             // 
             this.chartButtonVisual.BackColor = System.Drawing.SystemColors.Control;
-            this.chartButtonVisual.BorderlineColor = System.Drawing.Color.Transparent;
+            this.chartButtonVisual.BorderlineColor = System.Drawing.Color.Empty;
             chartArea1.BackColor = System.Drawing.SystemColors.Control;
             chartArea1.Name = "ChartArea1";
             this.chartButtonVisual.ChartAreas.Add(chartArea1);
             this.chartButtonVisual.Location = new System.Drawing.Point(171, 12);
             this.chartButtonVisual.Name = "chartButtonVisual";
-            this.chartButtonVisual.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chartButtonVisual.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            series1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Name = "Series1";
             series1.Points.Add(dataPoint1);
+            series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.No;
             series1.YValuesPerPoint = 2;
             this.chartButtonVisual.Series.Add(series1);
             this.chartButtonVisual.Size = new System.Drawing.Size(100, 100);
