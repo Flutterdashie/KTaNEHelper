@@ -99,5 +99,19 @@ namespace KTANESolver
                 complexWires.Show();
             }
         }
+
+        private void btnRunTheButton_Click(object sender, EventArgs e)
+        {
+            if (edgeworkReady)
+            {
+                Form theButton = new frmTheButton();
+                theButton.Show();
+            }
+            else
+            {
+                Form theButton = new frmTheButton();
+                theButton.Show();
+            }
+        }
     }
 }

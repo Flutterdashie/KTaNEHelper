@@ -48,6 +48,7 @@
             this.erpEdgeworkValidator = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblCurrentEdges = new System.Windows.Forms.Label();
             this.btnComplexWires = new System.Windows.Forms.Button();
+            this.btnRunTheButton = new System.Windows.Forms.Button();
             this.grpEdgework.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHolders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBatteries)).BeginInit();
@@ -233,11 +234,22 @@
             this.btnComplexWires.UseVisualStyleBackColor = true;
             this.btnComplexWires.Click += new System.EventHandler(this.btnComplexWires_Click);
             // 
+            // btnRunTheButton
+            // 
+            this.btnRunTheButton.Location = new System.Drawing.Point(12, 364);
+            this.btnRunTheButton.Name = "btnRunTheButton";
+            this.btnRunTheButton.Size = new System.Drawing.Size(139, 54);
+            this.btnRunTheButton.TabIndex = 4;
+            this.btnRunTheButton.Text = "The Button";
+            this.btnRunTheButton.UseVisualStyleBackColor = true;
+            this.btnRunTheButton.Click += new System.EventHandler(this.btnRunTheButton_Click);
+            // 
             // KTANESolver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRunTheButton);
             this.Controls.Add(this.btnComplexWires);
             this.Controls.Add(this.lblCurrentEdges);
             this.Controls.Add(this.grpEdgework);
@@ -275,6 +287,7 @@
         private System.Windows.Forms.ErrorProvider erpEdgeworkValidator;
         private System.Windows.Forms.Label lblCurrentEdges;
         private System.Windows.Forms.Button btnComplexWires;
+        private System.Windows.Forms.Button btnRunTheButton;
     }
 }
 
