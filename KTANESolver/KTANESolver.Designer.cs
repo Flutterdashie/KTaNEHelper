@@ -195,6 +195,7 @@
             // 
             // txtLitIndicators
             // 
+            this.txtLitIndicators.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtLitIndicators.Location = new System.Drawing.Point(89, 92);
             this.txtLitIndicators.Name = "txtLitIndicators";
             this.txtLitIndicators.Size = new System.Drawing.Size(142, 20);

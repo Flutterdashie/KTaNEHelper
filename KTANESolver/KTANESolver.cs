@@ -72,7 +72,6 @@ namespace KTANESolver
             {
                 edgeworkReady = false;
             }
-
         }
 
         private void btnReset_Click(object sender, EventArgs e)

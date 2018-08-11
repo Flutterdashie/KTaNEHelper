@@ -115,6 +115,18 @@ namespace KTANESolver
             return batteryHolders;
         }
 
+        public bool findIndicator(String target, bool isLit)
+        {
+            List<String> tempList = isLit ? litIndicators : unlitIndicators;
+            foreach (String x in tempList)
+            {
+                if (x.Equals(target))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
     }
 }
