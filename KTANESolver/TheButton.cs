@@ -23,7 +23,7 @@ namespace KTANESolver
         private void updateChart()
         {
             Color buttonColor;
-            switch(cboButtonColor.SelectedIndex)
+            switch (cboButtonColor.SelectedIndex)
             {
                 case 0:
                     buttonColor = Color.Red;
@@ -42,7 +42,7 @@ namespace KTANESolver
                     break;
             }
             chartButtonVisual.Series[0].Points[0].Color = buttonColor;
-            chartButtonVisual.Series[0].Points[0].Label = "               " + cboButtonText.Text;
+            chartButtonVisual.Titles[0].Text = cboButtonText.Text;
         }
 
         private void anythingChanged(object sender, EventArgs e)
