@@ -20,6 +20,17 @@ namespace KTANESolver
             cboButtonColor.SelectedIndex = 0;
         }
 
+        public frmTheButton(Edgework edges)
+        {
+            InitializeComponent();
+            cboButtonText.SelectedIndex = 0;
+            cboButtonColor.SelectedIndex = 0;
+            nudBatteries.Value = edges.getBatteries();
+            chkLitCAR.Checked = edges.findIndicator("CAR", true);
+            chkLitFRK.Checked = edges.findIndicator("FRK", true);
+
+        }
+
         private void updateChart()
         {
             Color buttonColor;
