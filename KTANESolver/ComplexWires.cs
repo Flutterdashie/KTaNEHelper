@@ -33,10 +33,10 @@ namespace KTANESolver
         private void calculateWire(object sender, EventArgs e)
         {
             bool[] checkBoxes = new bool[4];
-            for (int i = 0; i < 4; i++)
-            {
-                checkBoxes[i] = clbWireProperties.GetItemChecked(i);
-            }
+            checkBoxes[0] = chkRed.Checked;
+            checkBoxes[1] = chkBlue.Checked;
+            checkBoxes[2] = chkLED.Checked;
+            checkBoxes[3] = chkStar.Checked;
             lblCutOutput.Text = useCutStatus(getCutStatus(checkBoxes));
         }
 
@@ -57,10 +57,10 @@ namespace KTANESolver
 
         private void btnClearWireInput_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < clbWireProperties.Items.Count; i++)
-            {
-                clbWireProperties.SetItemChecked(i, false);
-            }
+            chkRed.Checked = false;
+            chkBlue.Checked = false;
+            chkLED.Checked = false;
+            chkStar.Checked = false;
         }
 
         private char getCutStatus(bool isRed, bool isBlue, bool isLit, bool isStarred)
@@ -219,6 +219,11 @@ namespace KTANESolver
             shouldCutText += shouldCut ? "" : "NOT ";
             shouldCutText += "be cut" + outputString;
             return shouldCutText;
+        }
+
+        private void wireStatusChanged(object sender, EventArgs e)
+        {
+            lblCutOutput.Text = "Not yet calculated.";
         }
 
         private void anyOptionChanged(object sender, ItemCheckEventArgs e)

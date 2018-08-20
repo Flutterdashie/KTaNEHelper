@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.clbWireProperties = new System.Windows.Forms.CheckedListBox();
             this.grpWireData = new System.Windows.Forms.GroupBox();
+            this.chkStar = new System.Windows.Forms.CheckBox();
+            this.chkLED = new System.Windows.Forms.CheckBox();
+            this.chkBlue = new System.Windows.Forms.CheckBox();
+            this.chkRed = new System.Windows.Forms.CheckBox();
             this.btnClearWireInput = new System.Windows.Forms.Button();
             this.btnSubmitWire = new System.Windows.Forms.Button();
             this.grpEdgeworkInfo = new System.Windows.Forms.GroupBox();
@@ -37,28 +40,9 @@
             this.btnLockToggle = new System.Windows.Forms.Button();
             this.clbEdgeworkData = new System.Windows.Forms.CheckedListBox();
             this.lblCutOutput = new System.Windows.Forms.Label();
-            this.chkRed = new System.Windows.Forms.CheckBox();
-            this.chkBlue = new System.Windows.Forms.CheckBox();
-            this.chkLED = new System.Windows.Forms.CheckBox();
-            this.chkStar = new System.Windows.Forms.CheckBox();
             this.grpWireData.SuspendLayout();
             this.grpEdgeworkInfo.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // clbWireProperties
-            // 
-            this.clbWireProperties.CheckOnClick = true;
-            this.clbWireProperties.FormattingEnabled = true;
-            this.clbWireProperties.Items.AddRange(new object[] {
-            "Red",
-            "Blue",
-            "LED",
-            "Star"});
-            this.clbWireProperties.Location = new System.Drawing.Point(139, 151);
-            this.clbWireProperties.Name = "clbWireProperties";
-            this.clbWireProperties.Size = new System.Drawing.Size(50, 64);
-            this.clbWireProperties.TabIndex = 0;
-            this.clbWireProperties.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.anyOptionChanged);
             // 
             // grpWireData
             // 
@@ -74,6 +58,50 @@
             this.grpWireData.TabIndex = 1;
             this.grpWireData.TabStop = false;
             this.grpWireData.Text = "Wire Information";
+            // 
+            // chkStar
+            // 
+            this.chkStar.AutoSize = true;
+            this.chkStar.Location = new System.Drawing.Point(6, 64);
+            this.chkStar.Name = "chkStar";
+            this.chkStar.Size = new System.Drawing.Size(45, 17);
+            this.chkStar.TabIndex = 6;
+            this.chkStar.Text = "Star";
+            this.chkStar.UseVisualStyleBackColor = true;
+            this.chkStar.CheckedChanged += new System.EventHandler(this.wireStatusChanged);
+            // 
+            // chkLED
+            // 
+            this.chkLED.AutoSize = true;
+            this.chkLED.Location = new System.Drawing.Point(6, 47);
+            this.chkLED.Name = "chkLED";
+            this.chkLED.Size = new System.Drawing.Size(47, 17);
+            this.chkLED.TabIndex = 5;
+            this.chkLED.Text = "LED";
+            this.chkLED.UseVisualStyleBackColor = true;
+            this.chkLED.CheckedChanged += new System.EventHandler(this.wireStatusChanged);
+            // 
+            // chkBlue
+            // 
+            this.chkBlue.AutoSize = true;
+            this.chkBlue.Location = new System.Drawing.Point(6, 30);
+            this.chkBlue.Name = "chkBlue";
+            this.chkBlue.Size = new System.Drawing.Size(47, 17);
+            this.chkBlue.TabIndex = 4;
+            this.chkBlue.Text = "Blue";
+            this.chkBlue.UseVisualStyleBackColor = true;
+            this.chkBlue.CheckedChanged += new System.EventHandler(this.wireStatusChanged);
+            // 
+            // chkRed
+            // 
+            this.chkRed.AutoSize = true;
+            this.chkRed.Location = new System.Drawing.Point(6, 13);
+            this.chkRed.Name = "chkRed";
+            this.chkRed.Size = new System.Drawing.Size(46, 17);
+            this.chkRed.TabIndex = 3;
+            this.chkRed.Text = "Red";
+            this.chkRed.UseVisualStyleBackColor = true;
+            this.chkRed.CheckedChanged += new System.EventHandler(this.wireStatusChanged);
             // 
             // btnClearWireInput
             // 
@@ -151,46 +179,6 @@
             this.lblCutOutput.TabIndex = 3;
             this.lblCutOutput.Text = "Not yet calculated.";
             // 
-            // chkRed
-            // 
-            this.chkRed.AutoSize = true;
-            this.chkRed.Location = new System.Drawing.Point(6, 13);
-            this.chkRed.Name = "chkRed";
-            this.chkRed.Size = new System.Drawing.Size(46, 17);
-            this.chkRed.TabIndex = 3;
-            this.chkRed.Text = "Red";
-            this.chkRed.UseVisualStyleBackColor = true;
-            // 
-            // chkBlue
-            // 
-            this.chkBlue.AutoSize = true;
-            this.chkBlue.Location = new System.Drawing.Point(6, 30);
-            this.chkBlue.Name = "chkBlue";
-            this.chkBlue.Size = new System.Drawing.Size(47, 17);
-            this.chkBlue.TabIndex = 4;
-            this.chkBlue.Text = "Blue";
-            this.chkBlue.UseVisualStyleBackColor = true;
-            // 
-            // chkLED
-            // 
-            this.chkLED.AutoSize = true;
-            this.chkLED.Location = new System.Drawing.Point(6, 47);
-            this.chkLED.Name = "chkLED";
-            this.chkLED.Size = new System.Drawing.Size(47, 17);
-            this.chkLED.TabIndex = 5;
-            this.chkLED.Text = "LED";
-            this.chkLED.UseVisualStyleBackColor = true;
-            // 
-            // chkStar
-            // 
-            this.chkStar.AutoSize = true;
-            this.chkStar.Location = new System.Drawing.Point(6, 64);
-            this.chkStar.Name = "chkStar";
-            this.chkStar.Size = new System.Drawing.Size(45, 17);
-            this.chkStar.TabIndex = 6;
-            this.chkStar.Text = "Star";
-            this.chkStar.UseVisualStyleBackColor = true;
-            // 
             // frmComplexWires
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,7 +186,6 @@
             this.ClientSize = new System.Drawing.Size(313, 251);
             this.Controls.Add(this.lblCutOutput);
             this.Controls.Add(this.grpEdgeworkInfo);
-            this.Controls.Add(this.clbWireProperties);
             this.Controls.Add(this.grpWireData);
             this.Name = "frmComplexWires";
             this.Text = "Complex Wires";
@@ -211,8 +198,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckedListBox clbWireProperties;
         private System.Windows.Forms.GroupBox grpWireData;
         private System.Windows.Forms.Button btnClearWireInput;
         private System.Windows.Forms.Button btnSubmitWire;
