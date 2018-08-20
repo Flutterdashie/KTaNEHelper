@@ -13,6 +13,7 @@ namespace KTANESolver
     public partial class frmComplexWires : Form
     {
         private Edgework currentBomb;
+        private DataTable recentWires;
         public frmComplexWires()
         {
             InitializeComponent();
@@ -28,6 +29,14 @@ namespace KTANESolver
             clbEdgeworkData.SetItemChecked(0, !(edges.isSerialOdd()));
             clbEdgeworkData.SetItemChecked(1, (edges.getBatteries() >= 2));
             clbEdgeworkData.SetItemChecked(2, (edges.portCount("PARALLEL") >= 1));
+        }
+
+        private void startTable()
+        {
+            recentWires = new DataTable();
+            recentWires.Columns.Add("Wire");
+            recentWires.Columns.Add("Calculation");
+            recentWires.Columns.Add("Action");
         }
 
         private void calculateWire(object sender, EventArgs e)
@@ -221,15 +230,7 @@ namespace KTANESolver
             return shouldCutText;
         }
 
-        private void wireStatusChanged(object sender, EventArgs e)
-        {
-            lblCutOutput.Text = "Not yet calculated.";
-        }
-
-        private void anyOptionChanged(object sender, ItemCheckEventArgs e)
-        {
-            lblCutOutput.Text = "Not yet calculated.";
-        }
+        private void anyOptionChanged(object sender, ItemCheckEventArgs e) => calculateWire(sender, e);
 
     }
 }

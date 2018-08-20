@@ -68,7 +68,7 @@
             this.chkStar.TabIndex = 6;
             this.chkStar.Text = "Star";
             this.chkStar.UseVisualStyleBackColor = true;
-            this.chkStar.CheckedChanged += new System.EventHandler(this.wireStatusChanged);
+            this.chkStar.CheckedChanged += new System.EventHandler(this.calculateWire);
             // 
             // chkLED
             // 
@@ -79,7 +79,7 @@
             this.chkLED.TabIndex = 5;
             this.chkLED.Text = "LED";
             this.chkLED.UseVisualStyleBackColor = true;
-            this.chkLED.CheckedChanged += new System.EventHandler(this.wireStatusChanged);
+            this.chkLED.CheckedChanged += new System.EventHandler(this.calculateWire);
             // 
             // chkBlue
             // 
@@ -90,7 +90,7 @@
             this.chkBlue.TabIndex = 4;
             this.chkBlue.Text = "Blue";
             this.chkBlue.UseVisualStyleBackColor = true;
-            this.chkBlue.CheckedChanged += new System.EventHandler(this.wireStatusChanged);
+            this.chkBlue.CheckedChanged += new System.EventHandler(this.calculateWire);
             // 
             // chkRed
             // 
@@ -101,7 +101,7 @@
             this.chkRed.TabIndex = 3;
             this.chkRed.Text = "Red";
             this.chkRed.UseVisualStyleBackColor = true;
-            this.chkRed.CheckedChanged += new System.EventHandler(this.wireStatusChanged);
+            this.chkRed.CheckedChanged += new System.EventHandler(this.calculateWire);
             // 
             // btnClearWireInput
             // 
@@ -119,7 +119,7 @@
             this.btnSubmitWire.Name = "btnSubmitWire";
             this.btnSubmitWire.Size = new System.Drawing.Size(108, 37);
             this.btnSubmitWire.TabIndex = 1;
-            this.btnSubmitWire.Text = "Submit";
+            this.btnSubmitWire.Text = "Log to Chart";
             this.btnSubmitWire.UseVisualStyleBackColor = true;
             this.btnSubmitWire.Click += new System.EventHandler(this.calculateWire);
             // 
