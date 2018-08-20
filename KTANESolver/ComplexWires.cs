@@ -230,7 +230,27 @@ namespace KTANESolver
             return shouldCutText;
         }
 
-        private void anyOptionChanged(object sender, ItemCheckEventArgs e) => calculateWire(sender, e);
+        private void fireUpdateAFTERCheck(object sender, ItemCheckEventArgs e)
+        {
+            /*Thank you so much to softburger and Larry on StackOverflow
+            * Otherwise I would've had to redo this clb as a bunch of check boxes
+            * This fix is almost entirely their code, and makes it so that the
+            * calculate wire method will calculate using the NEW value from
+            * the checkbox that started this event, rather than using the
+            * old one, as there's not an event that fires after a check is 
+            * changed inside a CLB.
+            * https://stackoverflow.com/questions/3666682/which-checkedlistbox-event-triggers-after-a-item-is-checked
+            */
+            CheckedListBox clb = (CheckedListBox)sender;
+            // Switch off event handler
+            clb.ItemCheck -= fireUpdateAFTERCheck;
+            clb.SetItemCheckState(e.Index, e.NewValue);
+            // Switch on event handler
+            clb.ItemCheck += fireUpdateAFTERCheck;
+
+            // Now you can go further
+            calculateWire(sender, e);
+        }
 
     }
 }

@@ -40,8 +40,10 @@
             this.btnLockToggle = new System.Windows.Forms.Button();
             this.clbEdgeworkData = new System.Windows.Forms.CheckedListBox();
             this.lblCutOutput = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpWireData.SuspendLayout();
             this.grpEdgeworkInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpWireData
@@ -167,31 +169,44 @@
             this.clbEdgeworkData.Name = "clbEdgeworkData";
             this.clbEdgeworkData.Size = new System.Drawing.Size(125, 49);
             this.clbEdgeworkData.TabIndex = 0;
-            this.clbEdgeworkData.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.anyOptionChanged);
+            this.clbEdgeworkData.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.fireUpdateAFTERCheck);
             // 
             // lblCutOutput
             // 
             this.lblCutOutput.AutoSize = true;
             this.lblCutOutput.Location = new System.Drawing.Point(12, 151);
-            this.lblCutOutput.MaximumSize = new System.Drawing.Size(270, 0);
+            this.lblCutOutput.MaximumSize = new System.Drawing.Size(260, 0);
             this.lblCutOutput.Name = "lblCutOutput";
             this.lblCutOutput.Size = new System.Drawing.Size(96, 13);
             this.lblCutOutput.TabIndex = 3;
             this.lblCutOutput.Text = "Not yet calculated.";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 209);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 4;
+            // 
             // frmComplexWires
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 251);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(311, 371);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblCutOutput);
             this.Controls.Add(this.grpEdgeworkInfo);
             this.Controls.Add(this.grpWireData);
+            this.MaximizeBox = false;
             this.Name = "frmComplexWires";
             this.Text = "Complex Wires";
             this.grpWireData.ResumeLayout(false);
             this.grpWireData.PerformLayout();
             this.grpEdgeworkInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +225,6 @@
         private System.Windows.Forms.CheckBox chkStar;
         private System.Windows.Forms.CheckBox chkLED;
         private System.Windows.Forms.CheckBox chkBlue;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
