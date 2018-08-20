@@ -19,6 +19,7 @@ namespace KTANESolver
             InitializeComponent();
             clbEdgeworkData.Enabled = true;
             btnResetEdgework.Enabled = true;
+            startTable();
         }
         public frmComplexWires(Edgework edges)
         {
@@ -29,6 +30,7 @@ namespace KTANESolver
             clbEdgeworkData.SetItemChecked(0, !(edges.isSerialOdd()));
             clbEdgeworkData.SetItemChecked(1, (edges.getBatteries() >= 2));
             clbEdgeworkData.SetItemChecked(2, (edges.portCount("PARALLEL") >= 1));
+            startTable();
         }
 
         private void startTable()
@@ -37,16 +39,29 @@ namespace KTANESolver
             recentWires.Columns.Add("Wire");
             recentWires.Columns.Add("Calculation");
             recentWires.Columns.Add("Action");
+            dgvWires.DataSource = recentWires;
+        }
+
+        private String wireToString()
+        {
+            String wireShort = "";
+            if (chkRed.Checked)
+                wireShort += "R";
+            if (chkBlue.Checked)
+                wireShort += "B";
+            if (chkLED.Checked)
+                wireShort += "L";
+            if (chkStar.Checked)
+                wireShort += "S";
+            if (wireShort.Length == 0)
+                wireShort = "none";
+            return wireShort;
         }
 
         private void calculateWire(object sender, EventArgs e)
         {
-            bool[] checkBoxes = new bool[4];
-            checkBoxes[0] = chkRed.Checked;
-            checkBoxes[1] = chkBlue.Checked;
-            checkBoxes[2] = chkLED.Checked;
-            checkBoxes[3] = chkStar.Checked;
-            lblCutOutput.Text = useCutStatus(getCutStatus(checkBoxes));
+            char currentStatus = getCutStatus(chkRed.Checked, chkBlue.Checked, chkLED.Checked, chkStar.Checked);
+            lblCutOutput.Text = useCutStatus(currentStatus);
         }
 
         private void toggleEdgeworkLock(object sender, EventArgs e)
@@ -175,15 +190,22 @@ namespace KTANESolver
 
         }
 
-        private char getCutStatus(bool[] checkData)
+        private bool shortCutStatus(char cutStatus)
         {
-            if (checkData.Length == 4)
+            switch (cutStatus)
             {
-                return getCutStatus(checkData[0], checkData[1], checkData[2], checkData[3]);
-            }
-            else
-            {
-                return '?';
+                case 'C':
+                    return true;
+                case 'D':
+                    return false;
+                case 'S':
+                    return clbEdgeworkData.GetItemChecked(0);
+                case 'B':
+                    return clbEdgeworkData.GetItemChecked(1);
+                case 'P':
+                    return clbEdgeworkData.GetItemChecked(2);
+                default:
+                    return false;
             }
         }
 
@@ -252,5 +274,24 @@ namespace KTANESolver
             calculateWire(sender, e);
         }
 
+        private void logToTable(object sender, EventArgs e)
+        {
+            if (recentWires == null)
+            {
+                startTable();
+            }
+            DataRow row = recentWires.NewRow();
+            char currentStatus = getCutStatus(chkRed.Checked, chkBlue.Checked, chkLED.Checked, chkStar.Checked);
+            row["Wire"] = wireToString();
+            row["Calculation"] = currentStatus;
+            row["Action"] = shortCutStatus(currentStatus) ? "Cut" : "Leave";
+            recentWires.Rows.Add(row);
+        }
+
+        private void btnClearTable_Click(object sender, EventArgs e)
+        {
+            if (recentWires != null)
+                recentWires.Clear();
+        }
     }
 }

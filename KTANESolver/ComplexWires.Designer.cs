@@ -40,10 +40,12 @@
             this.btnLockToggle = new System.Windows.Forms.Button();
             this.clbEdgeworkData = new System.Windows.Forms.CheckedListBox();
             this.lblCutOutput = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvWires = new System.Windows.Forms.DataGridView();
+            this.lblTableInfo = new System.Windows.Forms.Label();
+            this.btnClearTable = new System.Windows.Forms.Button();
             this.grpWireData.SuspendLayout();
             this.grpEdgeworkInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWires)).BeginInit();
             this.SuspendLayout();
             // 
             // grpWireData
@@ -121,9 +123,9 @@
             this.btnSubmitWire.Name = "btnSubmitWire";
             this.btnSubmitWire.Size = new System.Drawing.Size(108, 37);
             this.btnSubmitWire.TabIndex = 1;
-            this.btnSubmitWire.Text = "Log to Chart";
+            this.btnSubmitWire.Text = "Log to Table";
             this.btnSubmitWire.UseVisualStyleBackColor = true;
-            this.btnSubmitWire.Click += new System.EventHandler(this.calculateWire);
+            this.btnSubmitWire.Click += new System.EventHandler(this.logToTable);
             // 
             // grpEdgeworkInfo
             // 
@@ -181,13 +183,36 @@
             this.lblCutOutput.TabIndex = 3;
             this.lblCutOutput.Text = "Not yet calculated.";
             // 
-            // dataGridView1
+            // dgvWires
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 209);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvWires.AllowUserToAddRows = false;
+            this.dgvWires.AllowUserToOrderColumns = true;
+            this.dgvWires.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvWires.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWires.Location = new System.Drawing.Point(12, 209);
+            this.dgvWires.Name = "dgvWires";
+            this.dgvWires.ReadOnly = true;
+            this.dgvWires.Size = new System.Drawing.Size(265, 161);
+            this.dgvWires.TabIndex = 4;
+            // 
+            // lblTableInfo
+            // 
+            this.lblTableInfo.AutoSize = true;
+            this.lblTableInfo.Location = new System.Drawing.Point(12, 190);
+            this.lblTableInfo.Name = "lblTableInfo";
+            this.lblTableInfo.Size = new System.Drawing.Size(174, 13);
+            this.lblTableInfo.TabIndex = 5;
+            this.lblTableInfo.Text = "Note: Rows are manually deletable.";
+            // 
+            // btnClearTable
+            // 
+            this.btnClearTable.Location = new System.Drawing.Point(202, 185);
+            this.btnClearTable.Name = "btnClearTable";
+            this.btnClearTable.Size = new System.Drawing.Size(75, 23);
+            this.btnClearTable.TabIndex = 6;
+            this.btnClearTable.Text = "Clear Table";
+            this.btnClearTable.UseVisualStyleBackColor = true;
+            this.btnClearTable.Click += new System.EventHandler(this.btnClearTable_Click);
             // 
             // frmComplexWires
             // 
@@ -196,7 +221,9 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(311, 371);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnClearTable);
+            this.Controls.Add(this.lblTableInfo);
+            this.Controls.Add(this.dgvWires);
             this.Controls.Add(this.lblCutOutput);
             this.Controls.Add(this.grpEdgeworkInfo);
             this.Controls.Add(this.grpWireData);
@@ -206,7 +233,7 @@
             this.grpWireData.ResumeLayout(false);
             this.grpWireData.PerformLayout();
             this.grpEdgeworkInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWires)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,6 +252,8 @@
         private System.Windows.Forms.CheckBox chkStar;
         private System.Windows.Forms.CheckBox chkLED;
         private System.Windows.Forms.CheckBox chkBlue;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvWires;
+        private System.Windows.Forms.Label lblTableInfo;
+        private System.Windows.Forms.Button btnClearTable;
     }
 }
