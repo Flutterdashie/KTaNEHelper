@@ -191,6 +191,15 @@ namespace KTANESolver
 
         }
 
+        private void readInShort(String input)
+        {
+            chkRed.Checked = input.Contains("R");
+            chkBlue.Checked = input.Contains("B");
+            chkLED.Checked = input.Contains("L");
+            chkStar.Checked = input.Contains("S");
+
+        }
+
         private bool shortCutStatus(char cutStatus)
         {
             switch (cutStatus)
@@ -298,6 +307,28 @@ namespace KTANESolver
         private void lnkHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             lblShortHelp.Visible = !lblShortHelp.Visible;
+        }
+
+        private void txtShorthand_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    readInShort(txtShorthand.Text);
+                    logToTable(sender, e);
+                    txtShorthand.ResetText();
+                    e.SuppressKeyPress = true;
+                    break;
+                case Keys.Space:
+                    txtShorthand.ResetText();
+                    e.SuppressKeyPress = true;
+                    break;
+                case Keys.Escape:
+                    btnClearTable_Click(sender, e);
+                    txtShorthand.ResetText();
+                    e.SuppressKeyPress = true;
+                    break;
+            }
         }
     }
 }

@@ -230,6 +230,7 @@
             this.txtShorthand.Name = "txtShorthand";
             this.txtShorthand.Size = new System.Drawing.Size(55, 20);
             this.txtShorthand.TabIndex = 7;
+            this.txtShorthand.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShorthand_KeyDown);
             // 
             // lblShorthand
             // 
@@ -246,7 +247,7 @@
             this.lblShortHelp.Location = new System.Drawing.Point(12, 377);
             this.lblShortHelp.MaximumSize = new System.Drawing.Size(260, 0);
             this.lblShortHelp.Name = "lblShortHelp";
-            this.lblShortHelp.Size = new System.Drawing.Size(258, 78);
+            this.lblShortHelp.Size = new System.Drawing.Size(256, 78);
             this.lblShortHelp.TabIndex = 7;
             this.lblShortHelp.Text = resources.GetString("lblShortHelp.Text");
             this.lblShortHelp.Visible = false;
@@ -268,7 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(311, 458);
+            this.ClientSize = new System.Drawing.Size(311, 461);
             this.Controls.Add(this.lblShortHelp);
             this.Controls.Add(this.btnClearTable);
             this.Controls.Add(this.lblTableInfo);
