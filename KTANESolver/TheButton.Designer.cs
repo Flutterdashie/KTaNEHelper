@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "1,0");
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "1,0");
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.cboButtonColor = new System.Windows.Forms.ComboBox();
             this.cboButtonText = new System.Windows.Forms.ComboBox();
             this.linkOptimizedButton = new System.Windows.Forms.LinkLabel();
@@ -41,6 +41,7 @@
             this.chkLitCAR = new System.Windows.Forms.CheckBox();
             this.chkLitFRK = new System.Windows.Forms.CheckBox();
             this.lblBatteries = new System.Windows.Forms.Label();
+            this.lblSolution = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartButtonVisual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBatteries)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +79,7 @@
             // linkOptimizedButton
             // 
             this.linkOptimizedButton.AutoSize = true;
-            this.linkOptimizedButton.Location = new System.Drawing.Point(12, 120);
+            this.linkOptimizedButton.Location = new System.Drawing.Point(9, 185);
             this.linkOptimizedButton.Name = "linkOptimizedButton";
             this.linkOptimizedButton.Size = new System.Drawing.Size(91, 13);
             this.linkOptimizedButton.TabIndex = 2;
@@ -89,7 +90,7 @@
             // linkManual
             // 
             this.linkManual.AutoSize = true;
-            this.linkManual.Location = new System.Drawing.Point(12, 107);
+            this.linkManual.Location = new System.Drawing.Point(9, 172);
             this.linkManual.Name = "linkManual";
             this.linkManual.Size = new System.Drawing.Size(77, 13);
             this.linkManual.TabIndex = 3;
@@ -101,27 +102,27 @@
             // 
             this.chartButtonVisual.BackColor = System.Drawing.SystemColors.Control;
             this.chartButtonVisual.BorderlineColor = System.Drawing.Color.Empty;
-            chartArea1.BackColor = System.Drawing.SystemColors.Control;
-            chartArea1.Name = "ChartArea1";
-            this.chartButtonVisual.ChartAreas.Add(chartArea1);
+            chartArea2.BackColor = System.Drawing.SystemColors.Control;
+            chartArea2.Name = "ChartArea1";
+            this.chartButtonVisual.ChartAreas.Add(chartArea2);
             this.chartButtonVisual.Location = new System.Drawing.Point(147, 7);
             this.chartButtonVisual.Name = "chartButtonVisual";
             this.chartButtonVisual.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Name = "Series1";
-            series1.Points.Add(dataPoint1);
-            series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.No;
-            series1.YValuesPerPoint = 2;
-            this.chartButtonVisual.Series.Add(series1);
+            series2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Name = "Series1";
+            series2.Points.Add(dataPoint2);
+            series2.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.No;
+            series2.YValuesPerPoint = 2;
+            this.chartButtonVisual.Series.Add(series2);
             this.chartButtonVisual.Size = new System.Drawing.Size(191, 191);
             this.chartButtonVisual.TabIndex = 4;
-            title1.DockedToChartArea = "ChartArea1";
-            title1.DockingOffset = 40;
-            title1.Name = "Title1";
-            title1.Text = "Not yet set";
-            this.chartButtonVisual.Titles.Add(title1);
+            title2.DockedToChartArea = "ChartArea1";
+            title2.DockingOffset = 40;
+            title2.Name = "Title1";
+            title2.Text = "Not yet set";
+            this.chartButtonVisual.Titles.Add(title2);
             // 
             // nudBatteries
             // 
@@ -129,6 +130,7 @@
             this.nudBatteries.Name = "nudBatteries";
             this.nudBatteries.Size = new System.Drawing.Size(40, 20);
             this.nudBatteries.TabIndex = 4;
+            this.nudBatteries.ValueChanged += new System.EventHandler(this.anythingChanged);
             // 
             // chkLitCAR
             // 
@@ -139,6 +141,7 @@
             this.chkLitCAR.TabIndex = 5;
             this.chkLitCAR.Text = "Lit CAR";
             this.chkLitCAR.UseVisualStyleBackColor = true;
+            this.chkLitCAR.CheckedChanged += new System.EventHandler(this.anythingChanged);
             // 
             // chkLitFRK
             // 
@@ -149,6 +152,7 @@
             this.chkLitFRK.TabIndex = 6;
             this.chkLitFRK.Text = "Lit FRK";
             this.chkLitFRK.UseVisualStyleBackColor = true;
+            this.chkLitFRK.CheckedChanged += new System.EventHandler(this.anythingChanged);
             // 
             // lblBatteries
             // 
@@ -160,6 +164,16 @@
             this.lblBatteries.Text = "Batteries:";
             this.lblBatteries.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblSolution
+            // 
+            this.lblSolution.AutoSize = true;
+            this.lblSolution.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSolution.Location = new System.Drawing.Point(12, 111);
+            this.lblSolution.Name = "lblSolution";
+            this.lblSolution.Size = new System.Drawing.Size(142, 51);
+            this.lblSolution.TabIndex = 8;
+            this.lblSolution.Text = "?????";
+            // 
             // frmTheButton
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +181,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(369, 229);
+            this.Controls.Add(this.lblSolution);
             this.Controls.Add(this.chartButtonVisual);
             this.Controls.Add(this.cboButtonText);
             this.Controls.Add(this.chkLitFRK);
@@ -176,6 +191,7 @@
             this.Controls.Add(this.lblBatteries);
             this.Controls.Add(this.cboButtonColor);
             this.Controls.Add(this.linkManual);
+            this.MaximizeBox = false;
             this.Name = "frmTheButton";
             this.Text = "The Button";
             ((System.ComponentModel.ISupportInitialize)(this.chartButtonVisual)).EndInit();
@@ -196,5 +212,6 @@
         private System.Windows.Forms.CheckBox chkLitCAR;
         private System.Windows.Forms.CheckBox chkLitFRK;
         private System.Windows.Forms.Label lblBatteries;
+        private System.Windows.Forms.Label lblSolution;
     }
 }

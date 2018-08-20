@@ -104,7 +104,7 @@ namespace KTANESolver
         {
             if (edgeworkReady)
             {
-                Form theButton = new frmTheButton();
+                Form theButton = new frmTheButton(edgework);
                 theButton.Show();
             }
             else

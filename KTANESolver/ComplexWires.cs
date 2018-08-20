@@ -225,5 +225,6 @@ namespace KTANESolver
         {
             lblCutOutput.Text = "Not yet calculated.";
         }
+
     }
 }

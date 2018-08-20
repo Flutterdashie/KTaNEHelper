@@ -59,8 +59,56 @@ namespace KTANESolver
         private void anythingChanged(object sender, EventArgs e)
         {
             updateChart();
+            lblSolution.Text = calculateButton().ToUpper();
         }
         
+        private String calculateButton()
+        {
+            if (cboButtonText.SelectedIndex == 3)
+            {
+                if (nudBatteries.Value >= 2)
+                {
+                    return "tap";
+                }
+                else
+                {
+                    return "hold";
+                }
+            }
+            if (cboButtonColor.SelectedIndex == 3)
+            {
+                if (chkLitCAR.Checked)
+                {
+                    return "hold";
+                }
+                else
+                {
+                    return battLitFRKTest();
+                }
+            }
+            if ((cboButtonColor.SelectedIndex == 1) && (cboButtonText.SelectedIndex == 2))
+            {
+                return "hold";
+            }
+
+            if ((cboButtonColor.SelectedIndex == 0) && (cboButtonText.SelectedIndex == 1))
+            {
+                return "tap";
+            }
+
+            return battLitFRKTest();
+        }
+
+        private String battLitFRKTest()
+        {
+            if ((nudBatteries.Value >= 3) && chkLitFRK.Checked)
+            {
+                return "tap";
+            }
+
+            return "hold";
+        }
+
         private void spawnWebPage(String url)
         {
             //thanks again, stackoverflow! https://stackoverflow.com/questions/58024/open-a-url-from-windows-forms
