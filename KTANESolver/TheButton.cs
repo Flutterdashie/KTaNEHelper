@@ -60,6 +60,7 @@ namespace KTANESolver
         {
             updateChart();
             lblSolution.Text = calculateButton().ToUpper();
+            lblHold.Visible = lblSolution.Text.Equals("HOLD");
         }
         
         private String calculateButton()

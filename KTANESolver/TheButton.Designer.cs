@@ -42,6 +42,7 @@
             this.chkLitFRK = new System.Windows.Forms.CheckBox();
             this.lblBatteries = new System.Windows.Forms.Label();
             this.lblSolution = new System.Windows.Forms.Label();
+            this.lblHold = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartButtonVisual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBatteries)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +80,8 @@
             // linkOptimizedButton
             // 
             this.linkOptimizedButton.AutoSize = true;
-            this.linkOptimizedButton.Location = new System.Drawing.Point(9, 185);
+            this.linkOptimizedButton.Location = new System.Drawing.Point(247, 201);
+            this.linkOptimizedButton.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.linkOptimizedButton.Name = "linkOptimizedButton";
             this.linkOptimizedButton.Size = new System.Drawing.Size(91, 13);
             this.linkOptimizedButton.TabIndex = 2;
@@ -90,7 +92,8 @@
             // linkManual
             // 
             this.linkManual.AutoSize = true;
-            this.linkManual.Location = new System.Drawing.Point(9, 172);
+            this.linkManual.Location = new System.Drawing.Point(9, 201);
+            this.linkManual.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.linkManual.Name = "linkManual";
             this.linkManual.Size = new System.Drawing.Size(77, 13);
             this.linkManual.TabIndex = 3;
@@ -168,11 +171,20 @@
             // 
             this.lblSolution.AutoSize = true;
             this.lblSolution.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolution.Location = new System.Drawing.Point(12, 111);
+            this.lblSolution.Location = new System.Drawing.Point(3, 107);
             this.lblSolution.Name = "lblSolution";
             this.lblSolution.Size = new System.Drawing.Size(142, 51);
             this.lblSolution.TabIndex = 8;
             this.lblSolution.Text = "?????";
+            // 
+            // lblHold
+            // 
+            this.lblHold.AutoSize = true;
+            this.lblHold.Location = new System.Drawing.Point(9, 158);
+            this.lblHold.Name = "lblHold";
+            this.lblHold.Size = new System.Drawing.Size(120, 39);
+            this.lblHold.TabIndex = 9;
+            this.lblHold.Text = "Blue stripe: Release 4\r\nYellow stripe: Release 5\r\nElse: Release 1";
             // 
             // frmTheButton
             // 
@@ -181,6 +193,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(369, 229);
+            this.Controls.Add(this.lblHold);
             this.Controls.Add(this.lblSolution);
             this.Controls.Add(this.chartButtonVisual);
             this.Controls.Add(this.cboButtonText);
@@ -213,5 +226,6 @@
         private System.Windows.Forms.CheckBox chkLitFRK;
         private System.Windows.Forms.Label lblBatteries;
         private System.Windows.Forms.Label lblSolution;
+        private System.Windows.Forms.Label lblHold;
     }
 }
