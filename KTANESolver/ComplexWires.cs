@@ -33,6 +33,7 @@ namespace KTANESolver
             startTable();
         }
 
+
         private void startTable()
         {
             recentWires = new DataTable();
@@ -292,6 +293,11 @@ namespace KTANESolver
         {
             if (recentWires != null)
                 recentWires.Clear();
+        }
+
+        private void lnkHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            lblShortHelp.Visible = !lblShortHelp.Visible;
         }
     }
 }

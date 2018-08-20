@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblShortHelp.Text" xml:space="preserve">
+    <value>Type some combination of RBLS. Order does not matter, and W for white can be used but isn't calculated. Pressing enter will calculate and log the wire, and pressing space will clear the current info without logging. Clicking the ? link again will hide this message.</value>
+  </data>
 </root>

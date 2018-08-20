@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmComplexWires));
             this.grpWireData = new System.Windows.Forms.GroupBox();
             this.chkStar = new System.Windows.Forms.CheckBox();
             this.chkLED = new System.Windows.Forms.CheckBox();
@@ -43,6 +44,10 @@
             this.dgvWires = new System.Windows.Forms.DataGridView();
             this.lblTableInfo = new System.Windows.Forms.Label();
             this.btnClearTable = new System.Windows.Forms.Button();
+            this.txtShorthand = new System.Windows.Forms.TextBox();
+            this.lblShorthand = new System.Windows.Forms.Label();
+            this.lblShortHelp = new System.Windows.Forms.Label();
+            this.lnkHelp = new System.Windows.Forms.LinkLabel();
             this.grpWireData.SuspendLayout();
             this.grpEdgeworkInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWires)).BeginInit();
@@ -50,6 +55,9 @@
             // 
             // grpWireData
             // 
+            this.grpWireData.Controls.Add(this.lnkHelp);
+            this.grpWireData.Controls.Add(this.lblShorthand);
+            this.grpWireData.Controls.Add(this.txtShorthand);
             this.grpWireData.Controls.Add(this.chkStar);
             this.grpWireData.Controls.Add(this.chkLED);
             this.grpWireData.Controls.Add(this.chkBlue);
@@ -109,9 +117,9 @@
             // 
             // btnClearWireInput
             // 
-            this.btnClearWireInput.Location = new System.Drawing.Point(63, 19);
+            this.btnClearWireInput.Location = new System.Drawing.Point(59, 14);
             this.btnClearWireInput.Name = "btnClearWireInput";
-            this.btnClearWireInput.Size = new System.Drawing.Size(51, 64);
+            this.btnClearWireInput.Size = new System.Drawing.Size(55, 28);
             this.btnClearWireInput.TabIndex = 2;
             this.btnClearWireInput.Text = "&Clear";
             this.btnClearWireInput.UseVisualStyleBackColor = true;
@@ -214,13 +222,54 @@
             this.btnClearTable.UseVisualStyleBackColor = true;
             this.btnClearTable.Click += new System.EventHandler(this.btnClearTable_Click);
             // 
+            // txtShorthand
+            // 
+            this.txtShorthand.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtShorthand.Location = new System.Drawing.Point(59, 64);
+            this.txtShorthand.MaxLength = 4;
+            this.txtShorthand.Name = "txtShorthand";
+            this.txtShorthand.Size = new System.Drawing.Size(55, 20);
+            this.txtShorthand.TabIndex = 7;
+            // 
+            // lblShorthand
+            // 
+            this.lblShorthand.AutoSize = true;
+            this.lblShorthand.Location = new System.Drawing.Point(56, 48);
+            this.lblShorthand.Name = "lblShorthand";
+            this.lblShorthand.Size = new System.Drawing.Size(48, 13);
+            this.lblShorthand.TabIndex = 8;
+            this.lblShorthand.Text = "Or Type:";
+            // 
+            // lblShortHelp
+            // 
+            this.lblShortHelp.AutoSize = true;
+            this.lblShortHelp.Location = new System.Drawing.Point(12, 377);
+            this.lblShortHelp.MaximumSize = new System.Drawing.Size(260, 0);
+            this.lblShortHelp.Name = "lblShortHelp";
+            this.lblShortHelp.Size = new System.Drawing.Size(258, 78);
+            this.lblShortHelp.TabIndex = 7;
+            this.lblShortHelp.Text = resources.GetString("lblShortHelp.Text");
+            this.lblShortHelp.Visible = false;
+            // 
+            // lnkHelp
+            // 
+            this.lnkHelp.AutoSize = true;
+            this.lnkHelp.Location = new System.Drawing.Point(101, 48);
+            this.lnkHelp.Name = "lnkHelp";
+            this.lnkHelp.Size = new System.Drawing.Size(13, 13);
+            this.lnkHelp.TabIndex = 9;
+            this.lnkHelp.TabStop = true;
+            this.lnkHelp.Text = "?";
+            this.lnkHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkHelp_LinkClicked);
+            // 
             // frmComplexWires
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(311, 371);
+            this.ClientSize = new System.Drawing.Size(311, 458);
+            this.Controls.Add(this.lblShortHelp);
             this.Controls.Add(this.btnClearTable);
             this.Controls.Add(this.lblTableInfo);
             this.Controls.Add(this.dgvWires);
@@ -255,5 +304,9 @@
         private System.Windows.Forms.DataGridView dgvWires;
         private System.Windows.Forms.Label lblTableInfo;
         private System.Windows.Forms.Button btnClearTable;
+        private System.Windows.Forms.TextBox txtShorthand;
+        private System.Windows.Forms.Label lblShorthand;
+        private System.Windows.Forms.Label lblShortHelp;
+        private System.Windows.Forms.LinkLabel lnkHelp;
     }
 }
